@@ -3,17 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>De Feu — Café &amp; Pastry</title>
-  
-  <!-- Cinzel for Logo + Vazirmatn for all Persian & UI typography -->
+  <title>De Feu — Café &amp; Bakery</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css">
-  
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
   <script>
     tailwind.config = {
       theme: {
@@ -24,117 +19,55 @@
             logo: ['"Cinzel"', 'serif'],
           },
           colors: {
-            sand: {
-              50: '#FAF8F5',
-              100: '#F5F2EB',
-              200: '#EBE6DC',
-              300: '#DFD8C8',
-              400: '#C5BBA6',
-            },
-            roast: {
-              950: '#0E0D0C',
-              900: '#151413',
-              850: '#1C1A18',
-              800: '#2A2724',
-              700: '#45403B',
-              500: '#8A8278',
-              300: '#C2BAB0',
-            },
-            terracotta: '#B36B4C',
-            warmGold: '#C5A059'
+            sand: { 50: '#FAF8F5', 100: '#F5F2EB', 200: '#EBE6DC', 300: '#DFD8C8', 400: '#C5BBA6' },
+            roast: { 950: '#0E0D0C', 900: '#151413', 850: '#1C1A18', 800: '#2A2724', 700: '#45403B', 500: '#8A8278', 300: '#C2BAB0' },
+            terracotta: '#B36B4C', warmGold: '#C5A059'
           }
         }
       }
     }
   </script>
-
   <style>
-    /* Strict font-style: normal across the entire application */
-    *, html, body, h1, h2, h3, h4, p, span, em, i, a, button {
-      font-style: normal !important;
-    }
-    body {
-      font-family: 'Vazirmatn', sans-serif;
-    }
-    .font-brand-cinzel {
-      font-family: 'Cinzel', serif !important;
-    }
-    ::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #F5F2EB;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #D8D1C3;
-      border-radius: 9999px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #B9B09F;
-    }
-    .hide-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
-    .hide-scrollbar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-    .product-card {
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .product-card:hover {
-      transform: translateY(-4px);
-    }
-    .glass-header {
-      background: rgba(245, 242, 235, 0.94);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-    }
-    .glass-sticky-bar {
-      background: rgba(245, 242, 235, 0.96);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-    }
-    .cat-pill-active {
-      background-color: #151413 !important;
-      color: #FAF8F5 !important;
-      border-color: #151413 !important;
-    }
+    *, html, body, h1, h2, h3, h4, p, span, em, i, a, button { font-style: normal !important; }
+    body { font-family: 'Vazirmatn', sans-serif; }
+    .font-brand-cinzel { font-family: 'Cinzel', serif !important; }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #F5F2EB; }
+    ::-webkit-scrollbar-thumb { background: #D8D1C3; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #B9B09F; }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .product-card { transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+    .product-card:hover { transform: translateY(-4px); }
+    .glass-header { background: rgba(245, 242, 235, 0.94); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+    .glass-sticky-bar { background-color: #F5F2EB !important; opacity: 1 !important; box-shadow: 0 4px 12px -2px rgba(21, 20, 19, 0.08) !important; }
+    .cat-pill-active { background-color: #151413 !important; color: #FAF8F5 !important; border-color: #151413 !important; }
   </style>
 </head>
-
 <body class="bg-sand-100 text-roast-900 font-sans antialiased selection:bg-roast-900 selection:text-sand-50 min-h-screen flex flex-col">
 
-  <!-- NAVIGATION HEADER (Swapped positions: Menu link on RIGHT, DE FEU on LEFT) -->
+  <!-- NAVIGATION HEADER -->
   <header class="sticky top-0 z-40 glass-header border-b border-sand-200/80 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      
-      <!-- Right Side (in RTL): Menu Navigation Link -->
       <div class="flex items-center gap-3">
         <a href="menu.html" class="inline-flex items-center justify-center bg-roast-900 hover:bg-roast-800 text-sand-50 px-4 sm:px-5 py-2.5 rounded-full text-xs font-bold transition-all shadow-xs active:scale-95 font-sans">
           <span>منوی کامل</span>
         </a>
       </div>
-
-      <!-- Left Side (in RTL): DE FEU Logo & Subtitle -->
       <div class="flex items-center text-left">
         <a href="#" class="inline-block group text-left">
           <span class="font-brand-cinzel text-2xl sm:text-3xl font-bold tracking-[0.2em] text-roast-950 block leading-tight">DE FEU</span>
-          <span class="text-[9px] sm:text-[10px] tracking-[0.3em] text-roast-700 uppercase block font-semibold mt-0.5">CAFÉ &amp; PASTRY</span>
+          <span class="text-[9px] sm:text-[10px] tracking-[0.3em] text-roast-700 uppercase block font-semibold mt-0.5">CAFÉ &amp; BAKERY</span>
         </a>
       </div>
-
     </div>
+  </header>
 
-    </header>
-
-  <!-- HERO SECTION (Clean, without promo banner and without badge pill, matching Cinzel for DE FEU) -->
+  <!-- HERO SECTION -->
   <section class="py-8 sm:py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full border-b border-sand-200/80">
     <div class="max-w-3xl space-y-3">
       <h1 class="text-3xl sm:text-5xl lg:text-6xl font-sans font-bold text-roast-950 tracking-tight leading-[1.25]">
-        کافه و پیستری <span class="font-brand-cinzel font-bold text-warmGold tracking-[0.08em]">DE FEU</span>
+        کافه و بیکری <span class="font-brand-cinzel font-bold text-warmGold tracking-[0.08em]">DE FEU</span>
       </h1>
       <p class="text-sm sm:text-base text-roast-700 max-w-2xl font-normal leading-relaxed">
         عصاره‌گیری دقیق قهوه‌های تک‌خاستگاه، نوشیدنی‌های گرم و سرد دست‌ساز، و شیرینی‌های تازه پخت‌شده.
@@ -142,7 +75,7 @@
     </div>
   </section>
 
-  <!-- STICKY HORIZONTAL CATEGORY FILTERS (Placed between hero & first category; sticks to bottom of header at top-20) -->
+  <!-- STICKY HORIZONTAL CATEGORY FILTERS -->
   <div id="sticky-filters-bar" class="sticky top-20 z-30 bg-sand-100 glass-sticky-bar border-y border-sand-300 py-2.5 shadow-sm transition-all">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div id="filter-scroll-container" class="flex items-center gap-2.5 overflow-x-auto hide-scrollbar text-xs font-bold font-sans snap-x snap-mandatory scroll-smooth px-1 py-0.5">
@@ -172,33 +105,18 @@
       <section id="coffee-based" class="py-6 sm:py-8 border-b border-sand-200/80 last:border-b-0 scroll-mt-36">
         <div class="mb-4">
           <h3 class="text-2xl sm:text-3xl font-sans font-bold text-roast-950 tracking-tight">
-            Coffee based <span class="text-xl sm:text-2xl text-roast-800 mr-1.5 font-bold">(نوشیدنی‌های پایه اسپرسو و قهوه)</span>
+            Coffee based <span class="text-xl sm:text-2xl text-roast-800 mr-1.5 font-bold">(نوشیدنی‌های پایه قهوه)</span>
           </h3>
         </div>
-
-        <!-- Horizontal Scroll Track (5 items + See More card) -->
-        <div 
-          id="track-coffee-based" 
-          class="flex gap-4 sm:gap-5 overflow-x-auto hide-scrollbar scroll-smooth snap-x snap-mandatory pb-4 pt-1 px-1"
-        >
+        <div id="track-coffee-based" class="flex gap-4 sm:gap-5 overflow-x-auto hide-scrollbar scroll-smooth snap-x snap-mandatory pb-4 pt-1 px-1">
           
-      <article 
-        class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group"
-      >
+      <article class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group">
         <div>
-          <!-- Badge -->
           <div class="flex items-center justify-between mb-2">
-            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">
-              امضای کافه
-            </span>
-            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">
-              Colombia
-            </span>
+            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">کلاسیک</span>
+            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">Coffee Bar</span>
           </div>
-
-          <!-- Product Visual -->
           <div class="py-4 flex items-center justify-center">
-            
       <div class="w-28 h-32 bg-[#E8E2D5] rounded-2xl border border-[#D5CBB9] shadow-sm flex flex-col items-center justify-between p-2.5 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
         <div class="text-[8px] font-mono tracking-widest uppercase text-roast-600">Espresso</div>
         <div class="relative my-auto flex flex-col items-center">
@@ -213,167 +131,33 @@
           </div>
           <div class="w-16 h-1.5 bg-[#2F2C28] rounded-full mt-0.5 shadow-sm"></div>
         </div>
-        <div class="text-[8px] font-bold font-logo text-roast-900 tracking-widest">DE FEU</div>
-      </div>
-    
-          </div>
-
-          <!-- Title & Subtitle -->
+        <div class="text-[8px] font-bold font-brand-cinzel text-roast-900 tracking-widest">DE FEU</div>
+      </div></div>
           <div class="mt-1">
-            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">
-              Espresso De Feu
-            </h4>
-            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">
-              اسپرسو دوبل د فو
-            </div>
-            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">
-              دبل شات ۱۸ گرمی با کرمای فندقی ضخیم و نت‌های شکلات تلخ و ترنج
-            </p>
+            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">Americano</h4>
+            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">امریکنو</div>
+            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">دبل اسپرسو با آب داغ، بافتی زنده و طعمی شفاف</p>
           </div>
         </div>
-
-        <!-- Price -->
-        <div class="pt-3 mt-3 border-t border-sand-300/70 flex items-center justify-between">
-          <div class="text-xs text-roast-500 font-sans">قیمت</div>
-          <div class="text-right">
-            <span class="font-sans font-bold text-sm text-roast-950">
-              ۶۵,۰۰۰ تومان
-            </span>
+        
+        <div class="pt-2.5 mt-2.5 border-t border-sand-300/70 space-y-1">
+          <div class="flex items-center justify-between text-[11px]">
+            <span class="text-roast-600 font-sans">بلند ۵۰/۵۰:</span>
+            <span class="font-sans font-bold text-roast-950">۱۶۲,۰۰۰ تومان</span>
+          </div>
+          <div class="flex items-center justify-between text-[11px]">
+            <span class="text-roast-600 font-sans">۱۰۰٪ عربیکا:</span>
+            <span class="font-sans font-bold text-warmGold">۲۳۹,۰۰۰ تومان</span>
           </div>
         </div>
       </article>
-    
-      <article 
-        class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group"
-      >
+      <article class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group">
         <div>
-          <!-- Badge -->
           <div class="flex items-center justify-between mb-2">
-            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">
-              محبوب‌ترین
-            </span>
-            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">
-              House
-            </span>
+            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">پایه بار</span>
+            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">Coffee Bar</span>
           </div>
-
-          <!-- Product Visual -->
           <div class="py-4 flex items-center justify-center">
-            
-      <div class="w-28 h-32 bg-[#F0EAE1] rounded-2xl border border-[#DCD3C5] shadow-sm flex flex-col items-center justify-between p-2.5 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
-        <div class="text-[8px] font-mono tracking-widest uppercase text-roast-600">Microfoam</div>
-        <div class="relative my-auto flex flex-col items-center">
-          <div class="w-12 h-14 bg-gradient-to-b from-[#C49A6C] via-[#EADBCE] to-[#F5EFE6] rounded-b-xl rounded-t shadow-md border border-[#C5BBA6] relative flex flex-col items-center justify-start overflow-hidden">
-            <div class="w-full h-3.5 bg-[#FFFBF5] rounded-t flex items-center justify-center border-b border-[#E3D7C5]">
-              <span class="text-terracotta text-[7px]">☕</span>
-            </div>
-          </div>
-          <div class="w-14 h-1.5 bg-[#C5BBA6] rounded-full mt-0.5"></div>
-        </div>
-        <div class="text-[8px] font-bold font-logo text-roast-900 tracking-widest">DE FEU</div>
-      </div>
-    
-          </div>
-
-          <!-- Title & Subtitle -->
-          <div class="mt-1">
-            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">
-              Flat White
-            </h4>
-            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">
-              فلت وایت ملبورن
-            </div>
-            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">
-              دو شات ریسترتو غلیظ در ترکیب با میکروفوم ابریشمی شیر به سبک استرالیا
-            </p>
-          </div>
-        </div>
-
-        <!-- Price -->
-        <div class="pt-3 mt-3 border-t border-sand-300/70 flex items-center justify-between">
-          <div class="text-xs text-roast-500 font-sans">قیمت</div>
-          <div class="text-right">
-            <span class="font-sans font-bold text-sm text-roast-950">
-              ۹۵,۰۰۰ تومان
-            </span>
-          </div>
-        </div>
-      </article>
-    
-      <article 
-        class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group"
-      >
-        <div>
-          <!-- Badge -->
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">
-              پیشنهاد باریستا
-            </span>
-            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">
-              Guatemala
-            </span>
-          </div>
-
-          <!-- Product Visual -->
-          <div class="py-4 flex items-center justify-center">
-            
-      <div class="w-28 h-32 bg-[#F0EAE1] rounded-2xl border border-[#DCD3C5] shadow-sm flex flex-col items-center justify-between p-2.5 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
-        <div class="text-[8px] font-mono tracking-widest uppercase text-roast-600">Microfoam</div>
-        <div class="relative my-auto flex flex-col items-center">
-          <div class="w-12 h-14 bg-gradient-to-b from-[#C49A6C] via-[#EADBCE] to-[#F5EFE6] rounded-b-xl rounded-t shadow-md border border-[#C5BBA6] relative flex flex-col items-center justify-start overflow-hidden">
-            <div class="w-full h-3.5 bg-[#FFFBF5] rounded-t flex items-center justify-center border-b border-[#E3D7C5]">
-              <span class="text-terracotta text-[7px]">☕</span>
-            </div>
-          </div>
-          <div class="w-14 h-1.5 bg-[#C5BBA6] rounded-full mt-0.5"></div>
-        </div>
-        <div class="text-[8px] font-bold font-logo text-roast-900 tracking-widest">DE FEU</div>
-      </div>
-    
-          </div>
-
-          <!-- Title & Subtitle -->
-          <div class="mt-1">
-            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">
-              Cortado
-            </h4>
-            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">
-              کورتادو سنتی
-            </div>
-            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">
-              نسبت طلایی ۱:۱ اسپرسو پرمایه و شیر بخارداده با دمای کنترل‌شده در گیبرالتار
-            </p>
-          </div>
-        </div>
-
-        <!-- Price -->
-        <div class="pt-3 mt-3 border-t border-sand-300/70 flex items-center justify-between">
-          <div class="text-xs text-roast-500 font-sans">قیمت</div>
-          <div class="text-right">
-            <span class="font-sans font-bold text-sm text-roast-950">
-              ۸۵,۰۰۰ تومان
-            </span>
-          </div>
-        </div>
-      </article>
-    
-      <article 
-        class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group"
-      >
-        <div>
-          <!-- Badge -->
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">
-              کلاسیک
-            </span>
-            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">
-              Ethiopia
-            </span>
-          </div>
-
-          <!-- Product Visual -->
-          <div class="py-4 flex items-center justify-center">
-            
       <div class="w-28 h-32 bg-[#E8E2D5] rounded-2xl border border-[#D5CBB9] shadow-sm flex flex-col items-center justify-between p-2.5 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
         <div class="text-[8px] font-mono tracking-widest uppercase text-roast-600">Espresso</div>
         <div class="relative my-auto flex flex-col items-center">
@@ -388,53 +172,33 @@
           </div>
           <div class="w-16 h-1.5 bg-[#2F2C28] rounded-full mt-0.5 shadow-sm"></div>
         </div>
-        <div class="text-[8px] font-bold font-logo text-roast-900 tracking-widest">DE FEU</div>
-      </div>
-    
-          </div>
-
-          <!-- Title & Subtitle -->
+        <div class="text-[8px] font-bold font-brand-cinzel text-roast-900 tracking-widest">DE FEU</div>
+      </div></div>
           <div class="mt-1">
-            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">
-              Americano Classique
-            </h4>
-            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">
-              آمریکانو کلاسیک
-            </div>
-            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">
-              دبل اسپرسو با آب ۹۲ درجه سانتی‌گراد، بافتی تمیز، زنده و معطر
-            </p>
+            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">Espresso</h4>
+            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">اسپرسو</div>
+            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">شات دبل اسپرسو با کرمای فندقی و تن‌واری غلیظ</p>
           </div>
         </div>
-
-        <!-- Price -->
-        <div class="pt-3 mt-3 border-t border-sand-300/70 flex items-center justify-between">
-          <div class="text-xs text-roast-500 font-sans">قیمت</div>
-          <div class="text-right">
-            <span class="font-sans font-bold text-sm text-roast-950">
-              ۷۵,۰۰۰ تومان
-            </span>
+        
+        <div class="pt-2.5 mt-2.5 border-t border-sand-300/70 space-y-1">
+          <div class="flex items-center justify-between text-[11px]">
+            <span class="text-roast-600 font-sans">بلند ۵۰/۵۰:</span>
+            <span class="font-sans font-bold text-roast-950">۱۶۲,۰۰۰ تومان</span>
+          </div>
+          <div class="flex items-center justify-between text-[11px]">
+            <span class="text-roast-600 font-sans">۱۰۰٪ عربیکا:</span>
+            <span class="font-sans font-bold text-warmGold">۲۳۹,۰۰۰ تومان</span>
           </div>
         </div>
       </article>
-    
-      <article 
-        class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group"
-      >
+      <article class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group">
         <div>
-          <!-- Badge -->
           <div class="flex items-center justify-between mb-2">
-            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">
-              سنتی
-            </span>
-            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">
-              House
-            </span>
+            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">محبوب‌ترین</span>
+            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">Coffee Bar</span>
           </div>
-
-          <!-- Product Visual -->
           <div class="py-4 flex items-center justify-center">
-            
       <div class="w-28 h-32 bg-[#F0EAE1] rounded-2xl border border-[#DCD3C5] shadow-sm flex flex-col items-center justify-between p-2.5 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
         <div class="text-[8px] font-mono tracking-widest uppercase text-roast-600">Microfoam</div>
         <div class="relative my-auto flex flex-col items-center">
@@ -445,65 +209,114 @@
           </div>
           <div class="w-14 h-1.5 bg-[#C5BBA6] rounded-full mt-0.5"></div>
         </div>
-        <div class="text-[8px] font-bold font-logo text-roast-900 tracking-widest">DE FEU</div>
-      </div>
-    
-          </div>
-
-          <!-- Title & Subtitle -->
+        <div class="text-[8px] font-bold font-brand-cinzel text-roast-900 tracking-widest">DE FEU</div>
+      </div></div>
           <div class="mt-1">
-            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">
-              Cappuccino Italiano
-            </h4>
-            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">
-              کاپوچینو ایتالیایی
-            </div>
-            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">
-              اسپرسو با فوم غلیظ پفکی، شیر مخملی و پودر کاکائو تلخ ۷۰٪
-            </p>
+            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">Latte</h4>
+            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">لاته</div>
+            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">اسپرسو در ترکیب با شیر تازه بخارداده و فوم ابریشمی</p>
           </div>
         </div>
-
-        <!-- Price -->
-        <div class="pt-3 mt-3 border-t border-sand-300/70 flex items-center justify-between">
-          <div class="text-xs text-roast-500 font-sans">قیمت</div>
-          <div class="text-right">
-            <span class="font-sans font-bold text-sm text-roast-950">
-              ۹۰,۰۰۰ تومان
-            </span>
+        
+        <div class="pt-2.5 mt-2.5 border-t border-sand-300/70 space-y-1">
+          <div class="flex items-center justify-between text-[11px]">
+            <span class="text-roast-600 font-sans">بلند ۵۰/۵۰:</span>
+            <span class="font-sans font-bold text-roast-950">۲۶۶,۰۰۰ تومان</span>
+          </div>
+          <div class="flex items-center justify-between text-[11px]">
+            <span class="text-roast-600 font-sans">۱۰۰٪ عربیکا:</span>
+            <span class="font-sans font-bold text-warmGold">۳۱۷,۰۰۰ تومان</span>
           </div>
         </div>
       </article>
-    
+      <article class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">ایتالیایی</span>
+            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">Coffee Bar</span>
+          </div>
+          <div class="py-4 flex items-center justify-center">
+      <div class="w-28 h-32 bg-[#F0EAE1] rounded-2xl border border-[#DCD3C5] shadow-sm flex flex-col items-center justify-between p-2.5 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
+        <div class="text-[8px] font-mono tracking-widest uppercase text-roast-600">Microfoam</div>
+        <div class="relative my-auto flex flex-col items-center">
+          <div class="w-12 h-14 bg-gradient-to-b from-[#C49A6C] via-[#EADBCE] to-[#F5EFE6] rounded-b-xl rounded-t shadow-md border border-[#C5BBA6] relative flex flex-col items-center justify-start overflow-hidden">
+            <div class="w-full h-3.5 bg-[#FFFBF5] rounded-t flex items-center justify-center border-b border-[#E3D7C5]">
+              <span class="text-terracotta text-[7px]">☕</span>
+            </div>
+          </div>
+          <div class="w-14 h-1.5 bg-[#C5BBA6] rounded-full mt-0.5"></div>
+        </div>
+        <div class="text-[8px] font-bold font-brand-cinzel text-roast-900 tracking-widest">DE FEU</div>
+      </div></div>
+          <div class="mt-1">
+            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">Cappuccino</h4>
+            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">کاپوچینو</div>
+            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">اسپرسو با لایه ضخیم میکروفوم شیر مخملی</p>
+          </div>
+        </div>
+        
+        <div class="pt-2.5 mt-2.5 border-t border-sand-300/70 space-y-1">
+          <div class="flex items-center justify-between text-[11px]">
+            <span class="text-roast-600 font-sans">بلند ۵۰/۵۰:</span>
+            <span class="font-sans font-bold text-roast-950">۲۵۸,۰۰۰ تومان</span>
+          </div>
+          <div class="flex items-center justify-between text-[11px]">
+            <span class="text-roast-600 font-sans">۱۰۰٪ عربیکا:</span>
+            <span class="font-sans font-bold text-warmGold">۳۰۳,۰۰۰ تومان</span>
+          </div>
+        </div>
+      </article>
+      <article class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">پیشنهاد باریستا</span>
+            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">Coffee Bar</span>
+          </div>
+          <div class="py-4 flex items-center justify-center">
+      <div class="w-28 h-32 bg-[#F0EAE1] rounded-2xl border border-[#DCD3C5] shadow-sm flex flex-col items-center justify-between p-2.5 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
+        <div class="text-[8px] font-mono tracking-widest uppercase text-roast-600">Microfoam</div>
+        <div class="relative my-auto flex flex-col items-center">
+          <div class="w-12 h-14 bg-gradient-to-b from-[#C49A6C] via-[#EADBCE] to-[#F5EFE6] rounded-b-xl rounded-t shadow-md border border-[#C5BBA6] relative flex flex-col items-center justify-start overflow-hidden">
+            <div class="w-full h-3.5 bg-[#FFFBF5] rounded-t flex items-center justify-center border-b border-[#E3D7C5]">
+              <span class="text-terracotta text-[7px]">☕</span>
+            </div>
+          </div>
+          <div class="w-14 h-1.5 bg-[#C5BBA6] rounded-full mt-0.5"></div>
+        </div>
+        <div class="text-[8px] font-bold font-brand-cinzel text-roast-900 tracking-widest">DE FEU</div>
+      </div></div>
+          <div class="mt-1">
+            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">Cortado</h4>
+            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">کورتادو</div>
+            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">نسبت متوازن ۱:۱ اسپرسو پرمایه و شیر گرم در گیبرالتار</p>
+          </div>
+        </div>
+        
+        <div class="pt-2.5 mt-2.5 border-t border-sand-300/70 space-y-1">
+          <div class="flex items-center justify-between text-[11px]">
+            <span class="text-roast-600 font-sans">بلند ۵۰/۵۰:</span>
+            <span class="font-sans font-bold text-roast-950">۲۴۲,۰۰۰ تومان</span>
+          </div>
+          <div class="flex items-center justify-between text-[11px]">
+            <span class="text-roast-600 font-sans">۱۰۰٪ عربیکا:</span>
+            <span class="font-sans font-bold text-warmGold">۲۸۷,۰۰۰ تومان</span>
+          </div>
+        </div>
+      </article>
           
-      <div 
-        onclick="window.location.href='menu.html#coffee-based'" 
-        class="flex-none w-[220px] sm:w-[240px] snap-start bg-roast-900 text-sand-50 rounded-3xl p-6 flex flex-col justify-between items-center text-center cursor-pointer group hover:bg-roast-850 hover:shadow-xl transition-all border border-roast-800"
-      >
+      <div onclick="window.location.href='menu.html#coffee-based'" class="flex-none w-[220px] sm:w-[240px] snap-start bg-roast-900 text-sand-50 rounded-3xl p-6 flex flex-col justify-between items-center text-center cursor-pointer group hover:bg-roast-850 hover:shadow-xl transition-all border border-roast-800">
         <div class="w-12 h-12 rounded-full bg-roast-800 flex items-center justify-center text-warmGold mb-3 group-hover:scale-110 transition-transform">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-          </svg>
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </div>
-
         <div class="space-y-2">
-          <span class="text-[10px] uppercase font-mono tracking-widest text-warmGold block font-semibold">
-            +۷ آیتم دیگر
-          </span>
-          <h4 class="font-sans text-xl font-bold text-sand-50">
-            مشاهده کامل
-          </h4>
-          <p class="text-xs text-sand-400 font-normal font-sans leading-relaxed">
-            مشاهده تمام ۱۲ آیتم این بخش در منوی کامل
-          </p>
+          <span class="text-[10px] uppercase font-mono tracking-widest text-warmGold block font-semibold">+۲ آیتم دیگر</span>
+          <h4 class="font-sans text-xl font-bold text-sand-50">مشاهده کامل</h4>
+          <p class="text-xs text-sand-400 font-normal font-sans leading-relaxed">مشاهده تمام ۷ آیتم این بخش در منوی کامل</p>
         </div>
-
-
+        <span class="inline-flex items-center gap-2 mt-4 text-xs font-semibold text-sand-100 group-hover:text-warmGold transition-colors font-sans">ورود به منو</span>
       </div>
-    
         </div>
       </section>
-    
 
       <!-- SECTION 2: Warm -->
       <section id="warm" class="py-6 sm:py-8 border-b border-sand-200/80 last:border-b-0 scroll-mt-36">
@@ -512,30 +325,15 @@
             Warm <span class="text-xl sm:text-2xl text-roast-800 mr-1.5 font-bold">(نوشیدنی‌های گرم)</span>
           </h3>
         </div>
-
-        <!-- Horizontal Scroll Track (5 items + See More card) -->
-        <div 
-          id="track-warm" 
-          class="flex gap-4 sm:gap-5 overflow-x-auto hide-scrollbar scroll-smooth snap-x snap-mandatory pb-4 pt-1 px-1"
-        >
+        <div id="track-warm" class="flex gap-4 sm:gap-5 overflow-x-auto hide-scrollbar scroll-smooth snap-x snap-mandatory pb-4 pt-1 px-1">
           
-      <article 
-        class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group"
-      >
+      <article class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group">
         <div>
-          <!-- Badge -->
           <div class="flex items-center justify-between mb-2">
-            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">
-              بافت مخملی
-            </span>
-            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">
-              Callebaut
-            </span>
+            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">شکلات غلیظ</span>
+            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">Hot & Tea Bar</span>
           </div>
-
-          <!-- Product Visual -->
           <div class="py-4 flex items-center justify-center">
-            
       <div class="w-28 h-32 bg-[#EBE0D2] rounded-2xl border border-[#D5C5B0] shadow-sm flex flex-col items-center justify-between p-2.5 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
         <div class="text-[8px] font-mono tracking-widest uppercase text-terracotta font-semibold">Warm Mug</div>
         <div class="relative my-auto flex flex-col items-center">
@@ -549,53 +347,27 @@
           </div>
           <div class="w-16 h-1.5 bg-[#52331F]/30 rounded-full mt-0.5"></div>
         </div>
-        <div class="text-[8px] font-bold font-logo text-roast-900 tracking-widest">DE FEU</div>
-      </div>
-    
-          </div>
-
-          <!-- Title & Subtitle -->
+        <div class="text-[8px] font-bold font-brand-cinzel text-roast-900 tracking-widest">DE FEU</div>
+      </div></div>
           <div class="mt-1">
-            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">
-              Artisan Hot Chocolate
-            </h4>
-            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">
-              هات چاکلت دست‌ساز د فو
-            </div>
-            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">
-              شکلات دست‌ساز ۶۵٪ بلژیکی ذوب‌شده با شیر تازه و تاپینگ مارشمالو
-            </p>
+            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">Hot Chocolate</h4>
+            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">شکلات داغ</div>
+            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">شکلات مرغوب ذوب‌شده با شیر تازه و بافتی مخملی</p>
           </div>
         </div>
-
-        <!-- Price -->
-        <div class="pt-3 mt-3 border-t border-sand-300/70 flex items-center justify-between">
-          <div class="text-xs text-roast-500 font-sans">قیمت</div>
-          <div class="text-right">
-            <span class="font-sans font-bold text-sm text-roast-950">
-              ۹۵,۰۰۰ تومان
-            </span>
-          </div>
-        </div>
+        
+    <div class="pt-2.5 mt-2.5 border-t border-sand-300/70 flex items-center justify-between">
+      <span class="text-xs text-roast-500 font-sans">قیمت</span>
+      <span class="font-sans font-bold text-sm text-roast-950">۲۷۴,۰۰۰ تومان</span>
+    </div>
       </article>
-    
-      <article 
-        class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group"
-      >
+      <article class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group">
         <div>
-          <!-- Badge -->
           <div class="flex items-center justify-between mb-2">
-            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">
-              ادویه اصیل
-            </span>
-            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">
-              Assam
-            </span>
+            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">پسته دست‌ساز</span>
+            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">Hot & Tea Bar</span>
           </div>
-
-          <!-- Product Visual -->
           <div class="py-4 flex items-center justify-center">
-            
       <div class="w-28 h-32 bg-[#EBE0D2] rounded-2xl border border-[#D5C5B0] shadow-sm flex flex-col items-center justify-between p-2.5 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
         <div class="text-[8px] font-mono tracking-widest uppercase text-terracotta font-semibold">Warm Mug</div>
         <div class="relative my-auto flex flex-col items-center">
@@ -609,55 +381,97 @@
           </div>
           <div class="w-16 h-1.5 bg-[#52331F]/30 rounded-full mt-0.5"></div>
         </div>
-        <div class="text-[8px] font-bold font-logo text-roast-900 tracking-widest">DE FEU</div>
-      </div>
-    
-          </div>
-
-          <!-- Title & Subtitle -->
+        <div class="text-[8px] font-bold font-brand-cinzel text-roast-900 tracking-widest">DE FEU</div>
+      </div></div>
           <div class="mt-1">
-            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">
-              Royal Masala Chai
-            </h4>
-            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">
-              چای ماسالا سلطنتی
-            </div>
-            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">
-              دم‌آوری هندی چای سیاه با دارچین سیلان، هل سبز، زنجبیل و فلفل سیاه
-            </p>
+            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">Hot Pistachio</h4>
+            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">پسته داغ</div>
+            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">کرم پسته خالص و غلیظ با شیر گرم و عطر ویژه</p>
           </div>
         </div>
-
-        <!-- Price -->
-        <div class="pt-3 mt-3 border-t border-sand-300/70 flex items-center justify-between">
-          <div class="text-xs text-roast-500 font-sans">قیمت</div>
-          <div class="text-right">
-            <span class="font-sans font-bold text-sm text-roast-950">
-              ۸۵,۰۰۰ تومان
-            </span>
-          </div>
-        </div>
+        
+    <div class="pt-2.5 mt-2.5 border-t border-sand-300/70 flex items-center justify-between">
+      <span class="text-xs text-roast-500 font-sans">قیمت</span>
+      <span class="font-sans font-bold text-sm text-roast-950">۳۱۷,۰۰۰ تومان</span>
+    </div>
       </article>
-    
-      <article 
-        class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group"
-      >
+      <article class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group">
         <div>
-          <!-- Badge -->
           <div class="flex items-center justify-between mb-2">
-            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">
-              ارگانیک کیوتو
-            </span>
-            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">
-              Uji
-            </span>
+            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">ادویه اصیل</span>
+            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">Hot & Tea Bar</span>
           </div>
-
-          <!-- Product Visual -->
           <div class="py-4 flex items-center justify-center">
-            
+      <div class="w-28 h-32 bg-[#EBE0D2] rounded-2xl border border-[#D5C5B0] shadow-sm flex flex-col items-center justify-between p-2.5 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
+        <div class="text-[8px] font-mono tracking-widest uppercase text-terracotta font-semibold">Warm Mug</div>
+        <div class="relative my-auto flex flex-col items-center">
+          <div class="w-14 h-12 bg-[#3C2415] rounded-b-2xl rounded-t-sm shadow-md border border-[#52331F] relative flex flex-col items-center justify-start p-1">
+            <div class="w-10 h-2.5 bg-[#24140B] rounded-full border border-[#52331F] shadow-inner mt-0.5"></div>
+            <div class="flex gap-1 mt-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#FFFBF5] shadow-xs"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-[#FFFBF5] shadow-xs"></span>
+            </div>
+            <div class="absolute -right-2.5 top-2 w-3 h-5 rounded-r-full border-2 border-[#3C2415]"></div>
+          </div>
+          <div class="w-16 h-1.5 bg-[#52331F]/30 rounded-full mt-0.5"></div>
+        </div>
+        <div class="text-[8px] font-bold font-brand-cinzel text-roast-900 tracking-widest">DE FEU</div>
+      </div></div>
+          <div class="mt-1">
+            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">Karak Tea</h4>
+            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">چای کرک</div>
+            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">چای سنتی خاورمیانه دم‌آوری‌شده با شیر تغلیظ‌شده، هل و زعفران</p>
+          </div>
+        </div>
+        
+    <div class="pt-2.5 mt-2.5 border-t border-sand-300/70 flex items-center justify-between">
+      <span class="text-xs text-roast-500 font-sans">قیمت</span>
+      <span class="font-sans font-bold text-sm text-roast-950">۲۸۳,۰۰۰ تومان</span>
+    </div>
+      </article>
+      <article class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">گرمابخش</span>
+            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">Hot & Tea Bar</span>
+          </div>
+          <div class="py-4 flex items-center justify-center">
+      <div class="w-28 h-32 bg-[#EBE0D2] rounded-2xl border border-[#D5C5B0] shadow-sm flex flex-col items-center justify-between p-2.5 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
+        <div class="text-[8px] font-mono tracking-widest uppercase text-terracotta font-semibold">Warm Mug</div>
+        <div class="relative my-auto flex flex-col items-center">
+          <div class="w-14 h-12 bg-[#3C2415] rounded-b-2xl rounded-t-sm shadow-md border border-[#52331F] relative flex flex-col items-center justify-start p-1">
+            <div class="w-10 h-2.5 bg-[#24140B] rounded-full border border-[#52331F] shadow-inner mt-0.5"></div>
+            <div class="flex gap-1 mt-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#FFFBF5] shadow-xs"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-[#FFFBF5] shadow-xs"></span>
+            </div>
+            <div class="absolute -right-2.5 top-2 w-3 h-5 rounded-r-full border-2 border-[#3C2415]"></div>
+          </div>
+          <div class="w-16 h-1.5 bg-[#52331F]/30 rounded-full mt-0.5"></div>
+        </div>
+        <div class="text-[8px] font-bold font-brand-cinzel text-roast-900 tracking-widest">DE FEU</div>
+      </div></div>
+          <div class="mt-1">
+            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">Masala Chai</h4>
+            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">چای ماسالا</div>
+            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">دم‌آوری سنتی چای سیاه با دارچین، هل سبز، زنجبیل و فلفل سیاه</p>
+          </div>
+        </div>
+        
+    <div class="pt-2.5 mt-2.5 border-t border-sand-300/70 flex items-center justify-between">
+      <span class="text-xs text-roast-500 font-sans">قیمت</span>
+      <span class="font-sans font-bold text-sm text-roast-950">۲۴۷,۰۰۰ تومان</span>
+    </div>
+      </article>
+      <article class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">سنتی اصیل</span>
+            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">Hot & Tea Bar</span>
+          </div>
+          <div class="py-4 flex items-center justify-center">
       <div class="w-28 h-32 bg-[#E6ECE1] rounded-2xl border border-[#CDD8C4] shadow-sm flex flex-col items-center justify-between p-2.5 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
-        <div class="text-[8px] font-mono tracking-widest uppercase text-emerald-800 font-semibold">Kyoto Organics</div>
+        <div class="text-[8px] font-mono tracking-widest uppercase text-emerald-800 font-semibold">Matcha & Tea</div>
         <div class="relative my-auto flex flex-col items-center">
           <div class="w-14 h-11 bg-[#3A5038] rounded-b-2xl rounded-t-sm shadow-md border border-[#4D674A] relative flex flex-col items-center justify-start p-1">
             <div class="w-11 h-2.5 bg-[#698A50] rounded-full border border-[#8FB56E] shadow-inner mt-0.5 flex items-center justify-center">
@@ -666,179 +480,34 @@
           </div>
           <div class="w-16 h-1.5 bg-[#3A5038]/30 rounded-full mt-0.5"></div>
         </div>
-        <div class="text-[8px] font-bold font-logo text-emerald-950 tracking-widest">DE FEU</div>
-      </div>
-    
-          </div>
-
-          <!-- Title & Subtitle -->
+        <div class="text-[8px] font-bold font-brand-cinzel text-emerald-950 tracking-widest">DE FEU</div>
+      </div></div>
           <div class="mt-1">
-            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">
-              Kyoto Matcha Latte
-            </h4>
-            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">
-              ماچا لاته تشریفاتی کیوتو
-            </div>
-            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">
-              ماچا گرید تشریفاتی بهاره ژاپن هم‌زده با چیسن بامبو و شیر بخارداده
-            </p>
+            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">Iranian Tea</h4>
+            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">چای ایرانی</div>
+            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">چای سیاه دست‌چین بهاره لاهیجان دم‌آوری‌شده در قوری چینی</p>
           </div>
         </div>
-
-        <!-- Price -->
-        <div class="pt-3 mt-3 border-t border-sand-300/70 flex items-center justify-between">
-          <div class="text-xs text-roast-500 font-sans">قیمت</div>
-          <div class="text-right">
-            <span class="font-sans font-bold text-sm text-roast-950">
-              ۱۱۰,۰۰۰ تومان
-            </span>
-          </div>
-        </div>
+        
+    <div class="pt-2.5 mt-2.5 border-t border-sand-300/70 flex items-center justify-between">
+      <span class="text-xs text-roast-500 font-sans">قیمت</span>
+      <span class="font-sans font-bold text-sm text-roast-950">۱۰۰,۰۰۰ تومان</span>
+    </div>
       </article>
-    
-      <article 
-        class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group"
-      >
-        <div>
-          <!-- Badge -->
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">
-              سلامت‌بخش
-            </span>
-            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">
-              Organic
-            </span>
-          </div>
-
-          <!-- Product Visual -->
-          <div class="py-4 flex items-center justify-center">
-            
-      <div class="w-28 h-32 bg-[#E6ECE1] rounded-2xl border border-[#CDD8C4] shadow-sm flex flex-col items-center justify-between p-2.5 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
-        <div class="text-[8px] font-mono tracking-widest uppercase text-emerald-800 font-semibold">Kyoto Organics</div>
-        <div class="relative my-auto flex flex-col items-center">
-          <div class="w-14 h-11 bg-[#3A5038] rounded-b-2xl rounded-t-sm shadow-md border border-[#4D674A] relative flex flex-col items-center justify-start p-1">
-            <div class="w-11 h-2.5 bg-[#698A50] rounded-full border border-[#8FB56E] shadow-inner mt-0.5 flex items-center justify-center">
-              <span class="w-5 h-0.5 bg-[#8FB56E] rounded-full opacity-70"></span>
-            </div>
-          </div>
-          <div class="w-16 h-1.5 bg-[#3A5038]/30 rounded-full mt-0.5"></div>
-        </div>
-        <div class="text-[8px] font-bold font-logo text-emerald-950 tracking-widest">DE FEU</div>
-      </div>
-    
-          </div>
-
-          <!-- Title & Subtitle -->
-          <div class="mt-1">
-            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">
-              Golden Turmeric Elixir
-            </h4>
-            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">
-              اکسیر طلایی زردچوبه و عسل
-            </div>
-            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">
-              شیر بادام گرم با زردچوبه تازه، زنجبیل رنده‌شده، روغن نارگیل و عسل سبلان
-            </p>
-          </div>
-        </div>
-
-        <!-- Price -->
-        <div class="pt-3 mt-3 border-t border-sand-300/70 flex items-center justify-between">
-          <div class="text-xs text-roast-500 font-sans">قیمت</div>
-          <div class="text-right">
-            <span class="font-sans font-bold text-sm text-roast-950">
-              ۹۰,۰۰۰ تومان
-            </span>
-          </div>
-        </div>
-      </article>
-    
-      <article 
-        class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group"
-      >
-        <div>
-          <!-- Badge -->
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">
-              عطر برگاموت
-            </span>
-            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">
-              Sri
-            </span>
-          </div>
-
-          <!-- Product Visual -->
-          <div class="py-4 flex items-center justify-center">
-            
-      <div class="w-28 h-32 bg-[#E6ECE1] rounded-2xl border border-[#CDD8C4] shadow-sm flex flex-col items-center justify-between p-2.5 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
-        <div class="text-[8px] font-mono tracking-widest uppercase text-emerald-800 font-semibold">Kyoto Organics</div>
-        <div class="relative my-auto flex flex-col items-center">
-          <div class="w-14 h-11 bg-[#3A5038] rounded-b-2xl rounded-t-sm shadow-md border border-[#4D674A] relative flex flex-col items-center justify-start p-1">
-            <div class="w-11 h-2.5 bg-[#698A50] rounded-full border border-[#8FB56E] shadow-inner mt-0.5 flex items-center justify-center">
-              <span class="w-5 h-0.5 bg-[#8FB56E] rounded-full opacity-70"></span>
-            </div>
-          </div>
-          <div class="w-16 h-1.5 bg-[#3A5038]/30 rounded-full mt-0.5"></div>
-        </div>
-        <div class="text-[8px] font-bold font-logo text-emerald-950 tracking-widest">DE FEU</div>
-      </div>
-    
-          </div>
-
-          <!-- Title & Subtitle -->
-          <div class="mt-1">
-            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">
-              London Fog Lavender
-            </h4>
-            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">
-              لندن فاگ اسطوخودوس
-            </div>
-            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">
-              چای ارل گری سلطنتی با عصاره طبیعی لاوندر فرانسوی و فوم شیر وانیلی
-            </p>
-          </div>
-        </div>
-
-        <!-- Price -->
-        <div class="pt-3 mt-3 border-t border-sand-300/70 flex items-center justify-between">
-          <div class="text-xs text-roast-500 font-sans">قیمت</div>
-          <div class="text-right">
-            <span class="font-sans font-bold text-sm text-roast-950">
-              ۸۵,۰۰۰ تومان
-            </span>
-          </div>
-        </div>
-      </article>
-    
           
-      <div 
-        onclick="window.location.href='menu.html#warm'" 
-        class="flex-none w-[220px] sm:w-[240px] snap-start bg-roast-900 text-sand-50 rounded-3xl p-6 flex flex-col justify-between items-center text-center cursor-pointer group hover:bg-roast-850 hover:shadow-xl transition-all border border-roast-800"
-      >
+      <div onclick="window.location.href='menu.html#warm'" class="flex-none w-[220px] sm:w-[240px] snap-start bg-roast-900 text-sand-50 rounded-3xl p-6 flex flex-col justify-between items-center text-center cursor-pointer group hover:bg-roast-850 hover:shadow-xl transition-all border border-roast-800">
         <div class="w-12 h-12 rounded-full bg-roast-800 flex items-center justify-center text-warmGold mb-3 group-hover:scale-110 transition-transform">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-          </svg>
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </div>
-
         <div class="space-y-2">
-          <span class="text-[10px] uppercase font-mono tracking-widest text-warmGold block font-semibold">
-            +۵ آیتم دیگر
-          </span>
-          <h4 class="font-sans text-xl font-bold text-sand-50">
-            مشاهده کامل
-          </h4>
-          <p class="text-xs text-sand-400 font-normal font-sans leading-relaxed">
-            مشاهده تمام ۱۰ آیتم این بخش در منوی کامل
-          </p>
+          <span class="text-[10px] uppercase font-mono tracking-widest text-warmGold block font-semibold">+۵ آیتم دیگر</span>
+          <h4 class="font-sans text-xl font-bold text-sand-50">مشاهده کامل</h4>
+          <p class="text-xs text-sand-400 font-normal font-sans leading-relaxed">مشاهده تمام ۱۰ آیتم این بخش در منوی کامل</p>
         </div>
-
-
+        <span class="inline-flex items-center gap-2 mt-4 text-xs font-semibold text-sand-100 group-hover:text-warmGold transition-colors font-sans">ورود به منو</span>
       </div>
-    
         </div>
       </section>
-    
 
       <!-- SECTION 3: Cold -->
       <section id="cold" class="py-6 sm:py-8 border-b border-sand-200/80 last:border-b-0 scroll-mt-36">
@@ -847,32 +516,17 @@
             Cold <span class="text-xl sm:text-2xl text-roast-800 mr-1.5 font-bold">(نوشیدنی‌های سرد و بار سرد)</span>
           </h3>
         </div>
-
-        <!-- Horizontal Scroll Track (5 items + See More card) -->
-        <div 
-          id="track-cold" 
-          class="flex gap-4 sm:gap-5 overflow-x-auto hide-scrollbar scroll-smooth snap-x snap-mandatory pb-4 pt-1 px-1"
-        >
+        <div id="track-cold" class="flex gap-4 sm:gap-5 overflow-x-auto hide-scrollbar scroll-smooth snap-x snap-mandatory pb-4 pt-1 px-1">
           
-      <article 
-        class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group"
-      >
+      <article class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group">
         <div>
-          <!-- Badge -->
           <div class="flex items-center justify-between mb-2">
-            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">
-              کرمای نیتروژنی
-            </span>
-            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">
-              Colombia
-            </span>
+            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">خنک و کلاسیک</span>
+            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">Ice & Cold Bar</span>
           </div>
-
-          <!-- Product Visual -->
           <div class="py-4 flex items-center justify-center">
-            
       <div class="w-28 h-32 bg-[#E2E6E8] rounded-2xl border border-[#CCD2D6] shadow-sm flex flex-col items-center justify-between p-2.5 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
-        <div class="text-[8px] font-mono tracking-widest uppercase text-sky-800 font-semibold">Iced Bar</div>
+        <div class="text-[8px] font-mono tracking-widest uppercase text-sky-800 font-semibold">Cold Bar</div>
         <div class="relative my-auto flex flex-col items-center">
           <div class="w-11 h-15 bg-gradient-to-b from-[#1A110B] via-[#4A2E1B] to-[#C49A6C] rounded-b-lg rounded-t-sm shadow-md border border-white/60 relative flex flex-col items-center justify-start p-1 overflow-hidden">
             <div class="w-3.5 h-3.5 bg-white/70 rounded border border-white/90 shadow-xs transform rotate-12 mt-1"></div>
@@ -880,55 +534,35 @@
           </div>
           <div class="w-13 h-1.5 bg-black/20 rounded-full mt-0.5"></div>
         </div>
-        <div class="text-[8px] font-bold font-logo text-roast-900 tracking-widest">DE FEU</div>
-      </div>
-    
-          </div>
-
-          <!-- Title & Subtitle -->
+        <div class="text-[8px] font-bold font-brand-cinzel text-roast-900 tracking-widest">DE FEU</div>
+      </div></div>
           <div class="mt-1">
-            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">
-              Nitro Cold Brew
-            </h4>
-            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">
-              نیترو کلد برو ۱۸ ساعته
-            </div>
-            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">
-              عصاره‌گیری سرد طولانی با دانه‌های کلمبیا و تزریق گاز نیتروژن
-            </p>
+            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">Ice Americano</h4>
+            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">آیس امریکنو</div>
+            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">دبل اسپرسو با آب تصفیه‌شده سرد و یخ شفاف کریستالی</p>
           </div>
         </div>
-
-        <!-- Price -->
-        <div class="pt-3 mt-3 border-t border-sand-300/70 flex items-center justify-between">
-          <div class="text-xs text-roast-500 font-sans">قیمت</div>
-          <div class="text-right">
-            <span class="font-sans font-bold text-sm text-roast-950">
-              ۹۵,۰۰۰ تومان
-            </span>
+        
+        <div class="pt-2.5 mt-2.5 border-t border-sand-300/70 space-y-1">
+          <div class="flex items-center justify-between text-[11px]">
+            <span class="text-roast-600 font-sans">بلند ۵۰/۵۰:</span>
+            <span class="font-sans font-bold text-roast-950">۱۶۲,۰۰۰ تومان</span>
+          </div>
+          <div class="flex items-center justify-between text-[11px]">
+            <span class="text-roast-600 font-sans">۱۰۰٪ عربیکا:</span>
+            <span class="font-sans font-bold text-warmGold">۲۳۹,۰۰۰ تومان</span>
           </div>
         </div>
       </article>
-    
-      <article 
-        class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group"
-      >
+      <article class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group">
         <div>
-          <!-- Badge -->
           <div class="flex items-center justify-between mb-2">
-            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">
-              پرفروش‌ترین بار سرد
-            </span>
-            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">
-              House
-            </span>
+            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">پرفروش</span>
+            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">Ice & Cold Bar</span>
           </div>
-
-          <!-- Product Visual -->
           <div class="py-4 flex items-center justify-center">
-            
       <div class="w-28 h-32 bg-[#E2E6E8] rounded-2xl border border-[#CCD2D6] shadow-sm flex flex-col items-center justify-between p-2.5 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
-        <div class="text-[8px] font-mono tracking-widest uppercase text-sky-800 font-semibold">Iced Bar</div>
+        <div class="text-[8px] font-mono tracking-widest uppercase text-sky-800 font-semibold">Cold Bar</div>
         <div class="relative my-auto flex flex-col items-center">
           <div class="w-11 h-15 bg-gradient-to-b from-[#1A110B] via-[#4A2E1B] to-[#C49A6C] rounded-b-lg rounded-t-sm shadow-md border border-white/60 relative flex flex-col items-center justify-start p-1 overflow-hidden">
             <div class="w-3.5 h-3.5 bg-white/70 rounded border border-white/90 shadow-xs transform rotate-12 mt-1"></div>
@@ -936,111 +570,35 @@
           </div>
           <div class="w-13 h-1.5 bg-black/20 rounded-full mt-0.5"></div>
         </div>
-        <div class="text-[8px] font-bold font-logo text-roast-900 tracking-widest">DE FEU</div>
-      </div>
-    
-          </div>
-
-          <!-- Title & Subtitle -->
+        <div class="text-[8px] font-bold font-brand-cinzel text-roast-900 tracking-widest">DE FEU</div>
+      </div></div>
           <div class="mt-1">
-            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">
-              Iced Spanish Latte
-            </h4>
-            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">
-              آیس اسپانیش لاته خنک
-            </div>
-            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">
-              دبل اسپرسو تازه روی مکعب‌های یخ کریستالی، شیر سرد و شیرعسلی
-            </p>
+            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">Ice Latte</h4>
+            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">آیس لاته</div>
+            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">اسپرسو تازه روی تکه‌های یخ، با شیر سرد و لایه‌بندی شفاف</p>
           </div>
         </div>
-
-        <!-- Price -->
-        <div class="pt-3 mt-3 border-t border-sand-300/70 flex items-center justify-between">
-          <div class="text-xs text-roast-500 font-sans">قیمت</div>
-          <div class="text-right">
-            <span class="font-sans font-bold text-sm text-roast-950">
-              ۱۰۵,۰۰۰ تومان
-            </span>
+        
+        <div class="pt-2.5 mt-2.5 border-t border-sand-300/70 space-y-1">
+          <div class="flex items-center justify-between text-[11px]">
+            <span class="text-roast-600 font-sans">بلند ۵۰/۵۰:</span>
+            <span class="font-sans font-bold text-roast-950">۲۶۶,۰۰۰ تومان</span>
+          </div>
+          <div class="flex items-center justify-between text-[11px]">
+            <span class="text-roast-600 font-sans">۱۰۰٪ عربیکا:</span>
+            <span class="font-sans font-bold text-warmGold">۳۱۷,۰۰۰ تومان</span>
           </div>
         </div>
       </article>
-    
-      <article 
-        class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group"
-      >
+      <article class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group">
         <div>
-          <!-- Badge -->
           <div class="flex items-center justify-between mb-2">
-            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">
-              خنک و شاداب
-            </span>
-            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">
-              Kyoto
-            </span>
+            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">دسر و قهوه</span>
+            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">Ice & Cold Bar</span>
           </div>
-
-          <!-- Product Visual -->
           <div class="py-4 flex items-center justify-center">
-            
       <div class="w-28 h-32 bg-[#E2E6E8] rounded-2xl border border-[#CCD2D6] shadow-sm flex flex-col items-center justify-between p-2.5 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
-        <div class="text-[8px] font-mono tracking-widest uppercase text-sky-800 font-semibold">Iced Bar</div>
-        <div class="relative my-auto flex flex-col items-center">
-          <div class="w-11 h-15 bg-gradient-to-b from-[#698A50] via-[#E8EDDF] to-[#F5F8F0] rounded-b-lg rounded-t-sm shadow-md border border-white/60 relative flex flex-col items-center justify-start p-1 overflow-hidden">
-            <div class="w-3.5 h-3.5 bg-white/70 rounded border border-white/90 shadow-xs transform rotate-12 mt-1"></div>
-            <div class="w-3.5 h-3.5 bg-white/60 rounded border border-white/90 shadow-xs transform -rotate-6 mt-1"></div>
-          </div>
-          <div class="w-13 h-1.5 bg-black/20 rounded-full mt-0.5"></div>
-        </div>
-        <div class="text-[8px] font-bold font-logo text-roast-900 tracking-widest">DE FEU</div>
-      </div>
-    
-          </div>
-
-          <!-- Title & Subtitle -->
-          <div class="mt-1">
-            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">
-              Iced Matcha Citrus Fizz
-            </h4>
-            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">
-              آیس ماچا مرکبات گازدار
-            </div>
-            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">
-              ماچا ارگانیک معلق روی آب تونیک گازدار دست‌ساز و لیمو ترش
-            </p>
-          </div>
-        </div>
-
-        <!-- Price -->
-        <div class="pt-3 mt-3 border-t border-sand-300/70 flex items-center justify-between">
-          <div class="text-xs text-roast-500 font-sans">قیمت</div>
-          <div class="text-right">
-            <span class="font-sans font-bold text-sm text-roast-950">
-              ۱۱۵,۰۰۰ تومان
-            </span>
-          </div>
-        </div>
-      </article>
-    
-      <article 
-        class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group"
-      >
-        <div>
-          <!-- Badge -->
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">
-              سبک مدرن
-            </span>
-            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">
-              Ethiopia
-            </span>
-          </div>
-
-          <!-- Product Visual -->
-          <div class="py-4 flex items-center justify-center">
-            
-      <div class="w-28 h-32 bg-[#E2E6E8] rounded-2xl border border-[#CCD2D6] shadow-sm flex flex-col items-center justify-between p-2.5 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
-        <div class="text-[8px] font-mono tracking-widest uppercase text-sky-800 font-semibold">Iced Bar</div>
+        <div class="text-[8px] font-mono tracking-widest uppercase text-sky-800 font-semibold">Cold Bar</div>
         <div class="relative my-auto flex flex-col items-center">
           <div class="w-11 h-15 bg-gradient-to-b from-[#1A110B] via-[#4A2E1B] to-[#C49A6C] rounded-b-lg rounded-t-sm shadow-md border border-white/60 relative flex flex-col items-center justify-start p-1 overflow-hidden">
             <div class="w-3.5 h-3.5 bg-white/70 rounded border border-white/90 shadow-xs transform rotate-12 mt-1"></div>
@@ -1048,55 +606,35 @@
           </div>
           <div class="w-13 h-1.5 bg-black/20 rounded-full mt-0.5"></div>
         </div>
-        <div class="text-[8px] font-bold font-logo text-roast-900 tracking-widest">DE FEU</div>
-      </div>
-    
-          </div>
-
-          <!-- Title & Subtitle -->
+        <div class="text-[8px] font-bold font-brand-cinzel text-roast-900 tracking-widest">DE FEU</div>
+      </div></div>
           <div class="mt-1">
-            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">
-              De Feu Espresso Tonic
-            </h4>
-            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">
-              اسپرسو تونیک د فو
-            </div>
-            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">
-              تضاد هیجان‌انگیز اسپرسو میوه‌ای با سودای تونیک و پوست گریپ‌فروت
-            </p>
+            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">Affogato</h4>
+            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">آفوگاتو</div>
+            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">شات دبل اسپرسو داغ ریخته‌شده بر روی اسکوپ ژلاتو وانیلی ماداگاسکار</p>
           </div>
         </div>
-
-        <!-- Price -->
-        <div class="pt-3 mt-3 border-t border-sand-300/70 flex items-center justify-between">
-          <div class="text-xs text-roast-500 font-sans">قیمت</div>
-          <div class="text-right">
-            <span class="font-sans font-bold text-sm text-roast-950">
-              ۹۸,۰۰۰ تومان
-            </span>
+        
+        <div class="pt-2.5 mt-2.5 border-t border-sand-300/70 space-y-1">
+          <div class="flex items-center justify-between text-[11px]">
+            <span class="text-roast-600 font-sans">بلند ۵۰/۵۰:</span>
+            <span class="font-sans font-bold text-roast-950">۳۲۹,۰۰۰ تومان</span>
+          </div>
+          <div class="flex items-center justify-between text-[11px]">
+            <span class="text-roast-600 font-sans">۱۰۰٪ عربیکا:</span>
+            <span class="font-sans font-bold text-warmGold">۳۵۰,۰۰۰ تومان</span>
           </div>
         </div>
       </article>
-    
-      <article 
-        class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group"
-      >
+      <article class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group">
         <div>
-          <!-- Badge -->
           <div class="flex items-center justify-between mb-2">
-            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">
-              فوم سرد ابری
-            </span>
-            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">
-              House
-            </span>
+            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">کاراملی سرد</span>
+            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">Ice & Cold Bar</span>
           </div>
-
-          <!-- Product Visual -->
           <div class="py-4 flex items-center justify-center">
-            
       <div class="w-28 h-32 bg-[#E2E6E8] rounded-2xl border border-[#CCD2D6] shadow-sm flex flex-col items-center justify-between p-2.5 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
-        <div class="text-[8px] font-mono tracking-widest uppercase text-sky-800 font-semibold">Iced Bar</div>
+        <div class="text-[8px] font-mono tracking-widest uppercase text-sky-800 font-semibold">Cold Bar</div>
         <div class="relative my-auto flex flex-col items-center">
           <div class="w-11 h-15 bg-gradient-to-b from-[#1A110B] via-[#4A2E1B] to-[#C49A6C] rounded-b-lg rounded-t-sm shadow-md border border-white/60 relative flex flex-col items-center justify-start p-1 overflow-hidden">
             <div class="w-3.5 h-3.5 bg-white/70 rounded border border-white/90 shadow-xs transform rotate-12 mt-1"></div>
@@ -1104,99 +642,89 @@
           </div>
           <div class="w-13 h-1.5 bg-black/20 rounded-full mt-0.5"></div>
         </div>
-        <div class="text-[8px] font-bold font-logo text-roast-900 tracking-widest">DE FEU</div>
-      </div>
-    
-          </div>
-
-          <!-- Title & Subtitle -->
+        <div class="text-[8px] font-bold font-brand-cinzel text-roast-900 tracking-widest">DE FEU</div>
+      </div></div>
           <div class="mt-1">
-            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">
-              Iced Salted Caramel Cloud
-            </h4>
-            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">
-              آیس کارامل ابری نمک دریا
-            </div>
-            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">
-              اسپرسو سرد، شیر فندق و سس کارامل شور با تاپینگ خامه سرد نمکی
-            </p>
+            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">Ice Caramel Macchiato</h4>
+            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">آیس کارامل ماکیاتو</div>
+            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">شیر سرد وانیلی با اسپرسو و سس کارامل غلیظ روی یخ</p>
           </div>
         </div>
-
-        <!-- Price -->
-        <div class="pt-3 mt-3 border-t border-sand-300/70 flex items-center justify-between">
-          <div class="text-xs text-roast-500 font-sans">قیمت</div>
-          <div class="text-right">
-            <span class="font-sans font-bold text-sm text-roast-950">
-              ۱۱۰,۰۰۰ تومان
-            </span>
+        
+        <div class="pt-2.5 mt-2.5 border-t border-sand-300/70 space-y-1">
+          <div class="flex items-center justify-between text-[11px]">
+            <span class="text-roast-600 font-sans">بلند ۵۰/۵۰:</span>
+            <span class="font-sans font-bold text-roast-950">۳۲۹,۰۰۰ تومان</span>
+          </div>
+          <div class="flex items-center justify-between text-[11px]">
+            <span class="text-roast-600 font-sans">۱۰۰٪ عربیکا:</span>
+            <span class="font-sans font-bold text-warmGold">۳۷۸,۰۰۰ تومان</span>
           </div>
         </div>
       </article>
-    
+      <article class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">دم‌آوری ۱۸ ساعته</span>
+            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">Ice & Cold Bar</span>
+          </div>
+          <div class="py-4 flex items-center justify-center">
+      <div class="w-28 h-32 bg-[#E2E6E8] rounded-2xl border border-[#CCD2D6] shadow-sm flex flex-col items-center justify-between p-2.5 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
+        <div class="text-[8px] font-mono tracking-widest uppercase text-sky-800 font-semibold">Cold Bar</div>
+        <div class="relative my-auto flex flex-col items-center">
+          <div class="w-11 h-15 bg-gradient-to-b from-[#1A110B] via-[#4A2E1B] to-[#C49A6C] rounded-b-lg rounded-t-sm shadow-md border border-white/60 relative flex flex-col items-center justify-start p-1 overflow-hidden">
+            <div class="w-3.5 h-3.5 bg-white/70 rounded border border-white/90 shadow-xs transform rotate-12 mt-1"></div>
+            <div class="w-3.5 h-3.5 bg-white/60 rounded border border-white/90 shadow-xs transform -rotate-6 mt-1"></div>
+          </div>
+          <div class="w-13 h-1.5 bg-black/20 rounded-full mt-0.5"></div>
+        </div>
+        <div class="text-[8px] font-bold font-brand-cinzel text-roast-900 tracking-widest">DE FEU</div>
+      </div></div>
+          <div class="mt-1">
+            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">Cold Brew</h4>
+            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">کلدبرو</div>
+            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">عصاره‌گیری سرد ۱۸ ساعته با آب سرد، اسیدیته بسیار پایین و تن‌واری صاف</p>
+          </div>
+        </div>
+        
+    <div class="pt-2.5 mt-2.5 border-t border-sand-300/70 flex items-center justify-between">
+      <span class="text-xs text-roast-500 font-sans">قیمت</span>
+      <span class="font-sans font-bold text-sm text-roast-950">۲۴۰,۰۰۰ تومان</span>
+    </div>
+      </article>
           
-      <div 
-        onclick="window.location.href='menu.html#cold'" 
-        class="flex-none w-[220px] sm:w-[240px] snap-start bg-roast-900 text-sand-50 rounded-3xl p-6 flex flex-col justify-between items-center text-center cursor-pointer group hover:bg-roast-850 hover:shadow-xl transition-all border border-roast-800"
-      >
+      <div onclick="window.location.href='menu.html#cold'" class="flex-none w-[220px] sm:w-[240px] snap-start bg-roast-900 text-sand-50 rounded-3xl p-6 flex flex-col justify-between items-center text-center cursor-pointer group hover:bg-roast-850 hover:shadow-xl transition-all border border-roast-800">
         <div class="w-12 h-12 rounded-full bg-roast-800 flex items-center justify-center text-warmGold mb-3 group-hover:scale-110 transition-transform">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-          </svg>
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </div>
-
         <div class="space-y-2">
-          <span class="text-[10px] uppercase font-mono tracking-widest text-warmGold block font-semibold">
-            +۵ آیتم دیگر
-          </span>
-          <h4 class="font-sans text-xl font-bold text-sand-50">
-            مشاهده کامل
-          </h4>
-          <p class="text-xs text-sand-400 font-normal font-sans leading-relaxed">
-            مشاهده تمام ۱۰ آیتم این بخش در منوی کامل
-          </p>
+          <span class="text-[10px] uppercase font-mono tracking-widest text-warmGold block font-semibold">+۱۲ آیتم دیگر</span>
+          <h4 class="font-sans text-xl font-bold text-sand-50">مشاهده کامل</h4>
+          <p class="text-xs text-sand-400 font-normal font-sans leading-relaxed">مشاهده تمام ۱۷ آیتم این بخش در منوی کامل</p>
         </div>
-
-
+        <span class="inline-flex items-center gap-2 mt-4 text-xs font-semibold text-sand-100 group-hover:text-warmGold transition-colors font-sans">ورود به منو</span>
       </div>
-    
         </div>
       </section>
-    
 
       <!-- SECTION 4: Pastry -->
       <section id="pastry" class="py-6 sm:py-8 border-b border-sand-200/80 last:border-b-0 scroll-mt-36">
         <div class="mb-4">
           <h3 class="text-2xl sm:text-3xl font-sans font-bold text-roast-950 tracking-tight">
-            Pastry <span class="text-xl sm:text-2xl text-roast-800 mr-1.5 font-bold">(شیرینی، کیک و بیکری تازه)</span>
+            Pastry <span class="text-xl sm:text-2xl text-roast-800 mr-1.5 font-bold">(شیرینی، نان و کیک‌های تازه)</span>
           </h3>
         </div>
-
-        <!-- Horizontal Scroll Track (5 items + See More card) -->
-        <div 
-          id="track-pastry" 
-          class="flex gap-4 sm:gap-5 overflow-x-auto hide-scrollbar scroll-smooth snap-x snap-mandatory pb-4 pt-1 px-1"
-        >
+        <div id="track-pastry" class="flex gap-4 sm:gap-5 overflow-x-auto hide-scrollbar scroll-smooth snap-x snap-mandatory pb-4 pt-1 px-1">
           
-      <article 
-        class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group"
-      >
+      <article class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group">
         <div>
-          <!-- Badge -->
           <div class="flex items-center justify-between mb-2">
-            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">
-              پخت روز
-            </span>
-            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">
-              Artisan
-            </span>
+            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">پخت روز</span>
+            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">Artisan Bakery</span>
           </div>
-
-          <!-- Product Visual -->
           <div class="py-4 flex items-center justify-center">
-            
       <div class="w-28 h-32 bg-[#F5EFE3] rounded-2xl border border-[#E4DAC7] shadow-sm flex flex-col items-center justify-between p-2.5 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
-        <div class="text-[8px] font-mono tracking-widest uppercase text-amber-800 font-semibold">Bakehouse</div>
+        <div class="text-[8px] font-mono tracking-widest uppercase text-amber-800 font-semibold">Bakery</div>
         <div class="relative my-auto flex flex-col items-center">
           <div class="w-14 h-9 bg-gradient-to-r from-[#C27D38] via-[#E2A154] to-[#B36B28] rounded-full shadow-md border border-[#9A5C22] flex items-center justify-center transform -rotate-3 relative">
             <span class="w-10 h-0.5 bg-[#9A5C22]/40 rounded-full mb-1"></span>
@@ -1204,55 +732,29 @@
           </div>
           <div class="w-16 h-1.5 bg-[#9A5C22]/20 rounded-full mt-1.5"></div>
         </div>
-        <div class="text-[8px] font-bold font-logo text-amber-950 tracking-widest">DE FEU</div>
-      </div>
-    
-          </div>
-
-          <!-- Title & Subtitle -->
+        <div class="text-[8px] font-bold font-brand-cinzel text-amber-950 tracking-widest">DE FEU</div>
+      </div></div>
           <div class="mt-1">
-            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">
-              Classic Butter Croissant
-            </h4>
-            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">
-              کرواسان کره فرانسوی پخت روز
-            </div>
-            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">
-              بافت لایه‌ای فوق‌العاده سبک و ترد با عطر کره طبیعی فرانسوی
-            </p>
+            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">Croissant</h4>
+            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">کرواسان</div>
+            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">خمیر لایه‌ای طلایی و ترد پخته‌شده با کره طبیعی اروپایی</p>
           </div>
         </div>
-
-        <!-- Price -->
-        <div class="pt-3 mt-3 border-t border-sand-300/70 flex items-center justify-between">
-          <div class="text-xs text-roast-500 font-sans">قیمت</div>
-          <div class="text-right">
-            <span class="font-sans font-bold text-sm text-roast-950">
-              ۷۵,۰۰۰ تومان
-            </span>
-          </div>
-        </div>
+        
+    <div class="pt-2.5 mt-2.5 border-t border-sand-300/70 flex items-center justify-between">
+      <span class="text-xs text-roast-500 font-sans">قیمت</span>
+      <span class="font-sans font-bold text-sm text-roast-950">۱۷۰,۰۰۰ تومان</span>
+    </div>
       </article>
-    
-      <article 
-        class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group"
-      >
+      <article class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group">
         <div>
-          <!-- Badge -->
           <div class="flex items-center justify-between mb-2">
-            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">
-              شکلات فرانسوی
-            </span>
-            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">
-              Bakehouse
-            </span>
+            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">کلاسیک فرانسوی</span>
+            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">Artisan Bakery</span>
           </div>
-
-          <!-- Product Visual -->
           <div class="py-4 flex items-center justify-center">
-            
       <div class="w-28 h-32 bg-[#F5EFE3] rounded-2xl border border-[#E4DAC7] shadow-sm flex flex-col items-center justify-between p-2.5 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
-        <div class="text-[8px] font-mono tracking-widest uppercase text-amber-800 font-semibold">Bakehouse</div>
+        <div class="text-[8px] font-mono tracking-widest uppercase text-amber-800 font-semibold">Bakery</div>
         <div class="relative my-auto flex flex-col items-center">
           <div class="w-14 h-9 bg-gradient-to-r from-[#C27D38] via-[#E2A154] to-[#B36B28] rounded-full shadow-md border border-[#9A5C22] flex items-center justify-center transform -rotate-3 relative">
             <span class="w-10 h-0.5 bg-[#9A5C22]/40 rounded-full mb-1"></span>
@@ -1260,55 +762,29 @@
           </div>
           <div class="w-16 h-1.5 bg-[#9A5C22]/20 rounded-full mt-1.5"></div>
         </div>
-        <div class="text-[8px] font-bold font-logo text-amber-950 tracking-widest">DE FEU</div>
-      </div>
-    
-          </div>
-
-          <!-- Title & Subtitle -->
+        <div class="text-[8px] font-bold font-brand-cinzel text-amber-950 tracking-widest">DE FEU</div>
+      </div></div>
           <div class="mt-1">
-            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">
-              Pain au Chocolat
-            </h4>
-            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">
-              پن شوکولات والورونا
-            </div>
-            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">
-              دو خط شکلات تلخ ۶۶٪ والورونا پیچیده در خمیر لایه‌ای طلایی ترد
-            </p>
+            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">Crème Brûlée</h4>
+            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">کرم بروله</div>
+            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">کاستارد وانیلی لطیف با رویه قند سوخته ترد کاراملیزه شده با تورچ</p>
           </div>
         </div>
-
-        <!-- Price -->
-        <div class="pt-3 mt-3 border-t border-sand-300/70 flex items-center justify-between">
-          <div class="text-xs text-roast-500 font-sans">قیمت</div>
-          <div class="text-right">
-            <span class="font-sans font-bold text-sm text-roast-950">
-              ۸۵,۰۰۰ تومان
-            </span>
-          </div>
-        </div>
+        
+    <div class="pt-2.5 mt-2.5 border-t border-sand-300/70 flex items-center justify-between">
+      <span class="text-xs text-roast-500 font-sans">قیمت</span>
+      <span class="font-sans font-bold text-sm text-roast-950">۴۵۰,۰۰۰ تومان</span>
+    </div>
       </article>
-    
-      <article 
-        class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group"
-      >
+      <article class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group">
         <div>
-          <!-- Badge -->
           <div class="flex items-center justify-between mb-2">
-            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">
-              کرم بادام
-            </span>
-            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">
-              Pastry
-            </span>
+            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">بافت مرطوب</span>
+            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">Artisan Bakery</span>
           </div>
-
-          <!-- Product Visual -->
           <div class="py-4 flex items-center justify-center">
-            
       <div class="w-28 h-32 bg-[#F5EFE3] rounded-2xl border border-[#E4DAC7] shadow-sm flex flex-col items-center justify-between p-2.5 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
-        <div class="text-[8px] font-mono tracking-widest uppercase text-amber-800 font-semibold">Bakehouse</div>
+        <div class="text-[8px] font-mono tracking-widest uppercase text-amber-800 font-semibold">Bakery</div>
         <div class="relative my-auto flex flex-col items-center">
           <div class="w-14 h-9 bg-gradient-to-r from-[#C27D38] via-[#E2A154] to-[#B36B28] rounded-full shadow-md border border-[#9A5C22] flex items-center justify-center transform -rotate-3 relative">
             <span class="w-10 h-0.5 bg-[#9A5C22]/40 rounded-full mb-1"></span>
@@ -1316,55 +792,29 @@
           </div>
           <div class="w-16 h-1.5 bg-[#9A5C22]/20 rounded-full mt-1.5"></div>
         </div>
-        <div class="text-[8px] font-bold font-logo text-amber-950 tracking-widest">DE FEU</div>
-      </div>
-    
-          </div>
-
-          <!-- Title & Subtitle -->
+        <div class="text-[8px] font-bold font-brand-cinzel text-amber-950 tracking-widest">DE FEU</div>
+      </div></div>
           <div class="mt-1">
-            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">
-              Almond Blueberry Tart
-            </h4>
-            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">
-              تارت بادام و بلوبری تازه
-            </div>
-            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">
-              کراست ترد کره‌ای با فیلینگ فرانجیپان بادام و بلوبری تازه
-            </p>
+            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">Tres Leches</h4>
+            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">ترس لچس</div>
+            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">کیک اسفنجی خیسانده‌شده در سس سه شیر با لایه خامه سبک</p>
           </div>
         </div>
-
-        <!-- Price -->
-        <div class="pt-3 mt-3 border-t border-sand-300/70 flex items-center justify-between">
-          <div class="text-xs text-roast-500 font-sans">قیمت</div>
-          <div class="text-right">
-            <span class="font-sans font-bold text-sm text-roast-950">
-              ۹۵,۰۰۰ تومان
-            </span>
-          </div>
-        </div>
+        
+    <div class="pt-2.5 mt-2.5 border-t border-sand-300/70 flex items-center justify-between">
+      <span class="text-xs text-roast-500 font-sans">قیمت</span>
+      <span class="font-sans font-bold text-sm text-roast-950">۳۲۰,۰۰۰ تومان</span>
+    </div>
       </article>
-    
-      <article 
-        class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group"
-      >
+      <article class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group">
         <div>
-          <!-- Badge -->
           <div class="flex items-center justify-between mb-2">
-            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">
-              بافت مذاب
-            </span>
-            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">
-              Spanish
-            </span>
+            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">آرتیسان</span>
+            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">Artisan Bakery</span>
           </div>
-
-          <!-- Product Visual -->
           <div class="py-4 flex items-center justify-center">
-            
       <div class="w-28 h-32 bg-[#F5EFE3] rounded-2xl border border-[#E4DAC7] shadow-sm flex flex-col items-center justify-between p-2.5 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
-        <div class="text-[8px] font-mono tracking-widest uppercase text-amber-800 font-semibold">Bakehouse</div>
+        <div class="text-[8px] font-mono tracking-widest uppercase text-amber-800 font-semibold">Bakery</div>
         <div class="relative my-auto flex flex-col items-center">
           <div class="w-14 h-9 bg-gradient-to-r from-[#C27D38] via-[#E2A154] to-[#B36B28] rounded-full shadow-md border border-[#9A5C22] flex items-center justify-center transform -rotate-3 relative">
             <span class="w-10 h-0.5 bg-[#9A5C22]/40 rounded-full mb-1"></span>
@@ -1372,55 +822,29 @@
           </div>
           <div class="w-16 h-1.5 bg-[#9A5C22]/20 rounded-full mt-1.5"></div>
         </div>
-        <div class="text-[8px] font-bold font-logo text-amber-950 tracking-widest">DE FEU</div>
-      </div>
-    
-          </div>
-
-          <!-- Title & Subtitle -->
+        <div class="text-[8px] font-bold font-brand-cinzel text-amber-950 tracking-widest">DE FEU</div>
+      </div></div>
           <div class="mt-1">
-            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">
-              San Sebastian Cheesecake
-            </h4>
-            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">
-              چیزکیک سن سباستین سوخته
-            </div>
-            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">
-              رویه کاراملی سوخته بیرونی و مغز فوق‌العاده خامه‌ای مذاب و لذیذ
-            </p>
+            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">Galette</h4>
+            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">گلت</div>
+            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">شیرینی سنتی روستایی با کراست کره‌ای برشته و فیلینگ میوه فصلی</p>
           </div>
         </div>
-
-        <!-- Price -->
-        <div class="pt-3 mt-3 border-t border-sand-300/70 flex items-center justify-between">
-          <div class="text-xs text-roast-500 font-sans">قیمت</div>
-          <div class="text-right">
-            <span class="font-sans font-bold text-sm text-roast-950">
-              ۱۲۰,۰۰۰ تومان
-            </span>
-          </div>
-        </div>
+        
+    <div class="pt-2.5 mt-2.5 border-t border-sand-300/70 flex items-center justify-between">
+      <span class="text-xs text-roast-500 font-sans">قیمت</span>
+      <span class="font-sans font-bold text-sm text-roast-950">۴۶۰,۰۰۰ تومان</span>
+    </div>
       </article>
-    
-      <article 
-        class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group"
-      >
+      <article class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group">
         <div>
-          <!-- Badge -->
           <div class="flex items-center justify-between mb-2">
-            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">
-              عطر هل سبز
-            </span>
-            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">
-              Nordic
-            </span>
+            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">چیزکیک محبوب</span>
+            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">Artisan Bakery</span>
           </div>
-
-          <!-- Product Visual -->
           <div class="py-4 flex items-center justify-center">
-            
       <div class="w-28 h-32 bg-[#F5EFE3] rounded-2xl border border-[#E4DAC7] shadow-sm flex flex-col items-center justify-between p-2.5 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
-        <div class="text-[8px] font-mono tracking-widest uppercase text-amber-800 font-semibold">Bakehouse</div>
+        <div class="text-[8px] font-mono tracking-widest uppercase text-amber-800 font-semibold">Bakery</div>
         <div class="relative my-auto flex flex-col items-center">
           <div class="w-14 h-9 bg-gradient-to-r from-[#C27D38] via-[#E2A154] to-[#B36B28] rounded-full shadow-md border border-[#9A5C22] flex items-center justify-center transform -rotate-3 relative">
             <span class="w-10 h-0.5 bg-[#9A5C22]/40 rounded-full mb-1"></span>
@@ -1428,65 +852,34 @@
           </div>
           <div class="w-16 h-1.5 bg-[#9A5C22]/20 rounded-full mt-1.5"></div>
         </div>
-        <div class="text-[8px] font-bold font-logo text-amber-950 tracking-widest">DE FEU</div>
-      </div>
-    
-          </div>
-
-          <!-- Title & Subtitle -->
+        <div class="text-[8px] font-bold font-brand-cinzel text-amber-950 tracking-widest">DE FEU</div>
+      </div></div>
           <div class="mt-1">
-            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">
-              Swedish Cardamom Bun
-            </h4>
-            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">
-              رول هل و دارچین سوئدی
-            </div>
-            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">
-              خمیر بریوش نرم رول‌شده با کره دارچینی و دانه‌های هل سابیده‌شده
-            </p>
+            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">Vanilla San Sebastian</h4>
+            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">سن سباستین وانیل</div>
+            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">چیزکیک باسک سوخته با مغز خامه‌ای نرم و رویه کاراملیزه</p>
           </div>
         </div>
-
-        <!-- Price -->
-        <div class="pt-3 mt-3 border-t border-sand-300/70 flex items-center justify-between">
-          <div class="text-xs text-roast-500 font-sans">قیمت</div>
-          <div class="text-right">
-            <span class="font-sans font-bold text-sm text-roast-950">
-              ۸۰,۰۰۰ تومان
-            </span>
-          </div>
-        </div>
+        
+    <div class="pt-2.5 mt-2.5 border-t border-sand-300/70 flex items-center justify-between">
+      <span class="text-xs text-roast-500 font-sans">قیمت</span>
+      <span class="font-sans font-bold text-sm text-roast-950">۳۴۸,۰۰۰ تومان</span>
+    </div>
       </article>
-    
           
-      <div 
-        onclick="window.location.href='menu.html#pastry'" 
-        class="flex-none w-[220px] sm:w-[240px] snap-start bg-roast-900 text-sand-50 rounded-3xl p-6 flex flex-col justify-between items-center text-center cursor-pointer group hover:bg-roast-850 hover:shadow-xl transition-all border border-roast-800"
-      >
+      <div onclick="window.location.href='menu.html#pastry'" class="flex-none w-[220px] sm:w-[240px] snap-start bg-roast-900 text-sand-50 rounded-3xl p-6 flex flex-col justify-between items-center text-center cursor-pointer group hover:bg-roast-850 hover:shadow-xl transition-all border border-roast-800">
         <div class="w-12 h-12 rounded-full bg-roast-800 flex items-center justify-center text-warmGold mb-3 group-hover:scale-110 transition-transform">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-          </svg>
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </div>
-
         <div class="space-y-2">
-          <span class="text-[10px] uppercase font-mono tracking-widest text-warmGold block font-semibold">
-            +۵ آیتم دیگر
-          </span>
-          <h4 class="font-sans text-xl font-bold text-sand-50">
-            مشاهده کامل
-          </h4>
-          <p class="text-xs text-sand-400 font-normal font-sans leading-relaxed">
-            مشاهده تمام ۱۰ آیتم این بخش در منوی کامل
-          </p>
+          <span class="text-[10px] uppercase font-mono tracking-widest text-warmGold block font-semibold">+۲۹ آیتم دیگر</span>
+          <h4 class="font-sans text-xl font-bold text-sand-50">مشاهده کامل</h4>
+          <p class="text-xs text-sand-400 font-normal font-sans leading-relaxed">مشاهده تمام ۳۴ آیتم این بخش در منوی کامل</p>
         </div>
-
-
+        <span class="inline-flex items-center gap-2 mt-4 text-xs font-semibold text-sand-100 group-hover:text-warmGold transition-colors font-sans">ورود به منو</span>
       </div>
-    
         </div>
       </section>
-    
 
       <!-- SECTION 5: Coffee bean -->
       <section id="coffee-bean" class="py-6 sm:py-8 border-b border-sand-200/80 last:border-b-0 scroll-mt-36">
@@ -1495,323 +888,173 @@
             Coffee bean <span class="text-xl sm:text-2xl text-roast-800 mr-1.5 font-bold">(دانه‌های تخصصی قهوه)</span>
           </h3>
         </div>
-
-        <!-- Horizontal Scroll Track (5 items + See More card) -->
-        <div 
-          id="track-coffee-bean" 
-          class="flex gap-4 sm:gap-5 overflow-x-auto hide-scrollbar scroll-smooth snap-x snap-mandatory pb-4 pt-1 px-1"
-        >
+        <div id="track-coffee-bean" class="flex gap-4 sm:gap-5 overflow-x-auto hide-scrollbar scroll-smooth snap-x snap-mandatory pb-4 pt-1 px-1">
           
-      <article 
-        class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group"
-      >
+      <article class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group">
         <div>
-          <!-- Badge -->
           <div class="flex items-center justify-between mb-2">
-            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">
-              امضای برشته‌کاری
-            </span>
-            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">
-              Colombia
-            </span>
+            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">بلند کافه ۵۰/۵۰</span>
+            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">De Feu Roastery</span>
           </div>
-
-          <!-- Product Visual -->
           <div class="py-4 flex items-center justify-center">
-            
     <div class="w-28 h-32 bg-[#151413] text-sand-50 border-[#2D2A26] rounded-t-lg rounded-b-xl shadow-md border flex flex-col items-center justify-between p-2 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
-      <div class="text-[7px] font-mono tracking-widest uppercase opacity-75">Colombia</div>
+      <div class="text-[7px] font-mono tracking-widest uppercase opacity-75">De Feu Roastery</div>
       <div class="text-center my-auto">
-        <div class="font-logo text-[9px] font-bold tracking-[0.2em]">DE FEU</div>
+        <div class="font-brand-cinzel text-[9px] font-bold tracking-[0.2em]">DE FEU</div>
         <div class="text-[6px] tracking-[0.25em] text-warmGold uppercase mt-0.5">Specialty 250g</div>
       </div>
       <div class="w-full bg-black/25 text-[7px] py-0.5 text-center rounded font-mono uppercase tracking-wider">
-        Medium Roast
+        Medium-Dark
       </div>
-    </div>
-  
-          </div>
-
-          <!-- Title & Subtitle -->
+    </div></div>
           <div class="mt-1">
-            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">
-              De Feu Signature Espresso Blend
-            </h4>
-            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">
-              بلند اختصاصی اسپرسو د فو (۲۵۰ گرم)
-            </div>
-            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">
-              ترکیب ۶۰٪ کلمبیا و ۴۰٪ اتیوپی، نت‌های شکلات تلخ، کارامل و فندق
-            </p>
+            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">50/50 De Feu House Blend</h4>
+            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">بلند اختصاصی ۵۰/۵۰ د فو (۲۵۰ گرم)</div>
+            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">ترکیب ۵۰٪ عربیکا باکیفیت و ۵۰٪ روبوستا ممتاز با کرمای غلیظ و ماندگار</p>
           </div>
         </div>
-
-        <!-- Price -->
-        <div class="pt-3 mt-3 border-t border-sand-300/70 flex items-center justify-between">
-          <div class="text-xs text-roast-500 font-sans">قیمت</div>
-          <div class="text-right">
-            <span class="font-sans font-bold text-sm text-roast-950">
-              ۲۸۰,۰۰۰ تومان
-            </span>
-          </div>
-        </div>
+        
+    <div class="pt-2.5 mt-2.5 border-t border-sand-300/70 flex items-center justify-between">
+      <span class="text-xs text-roast-500 font-sans">قیمت</span>
+      <span class="font-sans font-bold text-sm text-roast-950">۱۶۲,۰۰۰ تومان</span>
+    </div>
       </article>
-    
-      <article 
-        class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group"
-      >
+      <article class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group">
         <div>
-          <!-- Badge -->
           <div class="flex items-center justify-between mb-2">
-            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">
-              برنده کاپینگ
-            </span>
-            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">
-              Ethiopia
-            </span>
+            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">۱۰۰٪ عربیکا</span>
+            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">Colombia & Ethiopia</span>
           </div>
-
-          <!-- Product Visual -->
           <div class="py-4 flex items-center justify-center">
-            
     <div class="w-28 h-32 bg-[#FAF7F0] text-roast-950 border-[#E2DBD0] rounded-t-lg rounded-b-xl shadow-md border flex flex-col items-center justify-between p-2 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
-      <div class="text-[7px] font-mono tracking-widest uppercase opacity-75">Ethiopia</div>
+      <div class="text-[7px] font-mono tracking-widest uppercase opacity-75">Colombia & Ethiopia</div>
       <div class="text-center my-auto">
-        <div class="font-logo text-[9px] font-bold tracking-[0.2em]">DE FEU</div>
+        <div class="font-brand-cinzel text-[9px] font-bold tracking-[0.2em]">DE FEU</div>
         <div class="text-[6px] tracking-[0.25em] text-warmGold uppercase mt-0.5">Specialty 250g</div>
       </div>
       <div class="w-full bg-black/25 text-[7px] py-0.5 text-center rounded font-mono uppercase tracking-wider">
-        Light Roast
+        Medium
       </div>
-    </div>
-  
-          </div>
-
-          <!-- Title & Subtitle -->
+    </div></div>
           <div class="mt-1">
-            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">
-              Ethiopia Yirgacheffe G1 Floral
-            </h4>
-            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">
-              اتیوپی یرگاچف گرید ۱ فلورال (۲۵۰ گرم)
-            </div>
-            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">
-              تک‌خاستگاه شسته شده با نت‌های شگفت‌انگیز گل یاس، ترنج، زردآلو و چای سیاه
-            </p>
+            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">100% Arabica Specialty Single Origin</h4>
+            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">عربیکا ۱۰۰٪ تک‌خاستگاه د فو (۲۵۰ گرم)</div>
+            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">دانه‌های برگزیده ۱۰۰٪ عربیکا با اسیدیته شفاف و نت‌های شیرین کاکائویی</p>
           </div>
         </div>
-
-        <!-- Price -->
-        <div class="pt-3 mt-3 border-t border-sand-300/70 flex items-center justify-between">
-          <div class="text-xs text-roast-500 font-sans">قیمت</div>
-          <div class="text-right">
-            <span class="font-sans font-bold text-sm text-roast-950">
-              ۳۴۰,۰۰۰ تومان
-            </span>
-          </div>
-        </div>
-      </article>
-    
-      <article 
-        class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group"
-      >
-        <div>
-          <!-- Badge -->
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">
-              میکرولات نایاب
-            </span>
-            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">
-              Colombia
-            </span>
-          </div>
-
-          <!-- Product Visual -->
-          <div class="py-4 flex items-center justify-center">
-            
-    <div class="w-28 h-32 bg-[#2E1A29] text-sand-50 border-[#4D2A45] rounded-t-lg rounded-b-xl shadow-md border flex flex-col items-center justify-between p-2 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
-      <div class="text-[7px] font-mono tracking-widest uppercase opacity-75">Colombia</div>
-      <div class="text-center my-auto">
-        <div class="font-logo text-[9px] font-bold tracking-[0.2em]">DE FEU</div>
-        <div class="text-[6px] tracking-[0.25em] text-warmGold uppercase mt-0.5">Specialty 250g</div>
-      </div>
-      <div class="w-full bg-black/25 text-[7px] py-0.5 text-center rounded font-mono uppercase tracking-wider">
-        Light-Medium Roast
-      </div>
+        
+    <div class="pt-2.5 mt-2.5 border-t border-sand-300/70 flex items-center justify-between">
+      <span class="text-xs text-roast-500 font-sans">قیمت</span>
+      <span class="font-sans font-bold text-sm text-roast-950">۲۳۹,۰۰۰ تومان</span>
     </div>
-  
-          </div>
-
-          <!-- Title & Subtitle -->
-          <div class="mt-1">
-            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">
-              Colombia Geisha Finca El Paraiso
-            </h4>
-            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">
-              کلمبیا گیشا مزرعه ال پارایسو (۲۰۰ گرم)
-            </div>
-            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">
-              یکی از نفیس‌ترین قهوه‌های جهان، تخمیر بی‌هوازی دوبل با نت هلو و عسل
-            </p>
-          </div>
-        </div>
-
-        <!-- Price -->
-        <div class="pt-3 mt-3 border-t border-sand-300/70 flex items-center justify-between">
-          <div class="text-xs text-roast-500 font-sans">قیمت</div>
-          <div class="text-right">
-            <span class="font-sans font-bold text-sm text-roast-950">
-              ۵۸۰,۰۰۰ تومان
-            </span>
-          </div>
-        </div>
       </article>
-    
-      <article 
-        class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group"
-      >
+      <article class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group">
         <div>
-          <!-- Badge -->
           <div class="flex items-center justify-between mb-2">
-            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">
-              خاک آتشفشانی
-            </span>
-            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">
-              Guatemala
-            </span>
+            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">تک‌خاستگاه</span>
+            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">Colombia Huila</span>
           </div>
-
-          <!-- Product Visual -->
           <div class="py-4 flex items-center justify-center">
-            
     <div class="w-28 h-32 bg-[#DFD8C8] text-roast-900 border-[#C5BBA6] rounded-t-lg rounded-b-xl shadow-md border flex flex-col items-center justify-between p-2 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
-      <div class="text-[7px] font-mono tracking-widest uppercase opacity-75">Guatemala</div>
+      <div class="text-[7px] font-mono tracking-widest uppercase opacity-75">Colombia Huila</div>
       <div class="text-center my-auto">
-        <div class="font-logo text-[9px] font-bold tracking-[0.2em]">DE FEU</div>
+        <div class="font-brand-cinzel text-[9px] font-bold tracking-[0.2em]">DE FEU</div>
         <div class="text-[6px] tracking-[0.25em] text-warmGold uppercase mt-0.5">Specialty 250g</div>
       </div>
       <div class="w-full bg-black/25 text-[7px] py-0.5 text-center rounded font-mono uppercase tracking-wider">
-        Medium Roast
+        Medium
       </div>
-    </div>
-  
-          </div>
-
-          <!-- Title & Subtitle -->
+    </div></div>
           <div class="mt-1">
-            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">
-              Guatemala Antigua Pastoral
-            </h4>
-            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">
-              گواتمالا آنتیگوا دره آتشفشانی (۲۵۰ گرم)
-            </div>
-            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">
-              خاک غنی آتشفشانی، اسیدیته ملایم سیب سرخ، تافی کره‌ای و تن‌واری مخملی
-            </p>
+            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">Colombia Supremo Reserve</h4>
+            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">کلمبیا سوپریمو (۲۵۰ گرم)</div>
+            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">شیرینی کاراملی، عطر زردآلو و تن‌واری کرمی در برشتگی متوسط</p>
           </div>
         </div>
-
-        <!-- Price -->
-        <div class="pt-3 mt-3 border-t border-sand-300/70 flex items-center justify-between">
-          <div class="text-xs text-roast-500 font-sans">قیمت</div>
-          <div class="text-right">
-            <span class="font-sans font-bold text-sm text-roast-950">
-              ۳۲۰,۰۰۰ تومان
-            </span>
-          </div>
-        </div>
+        
+    <div class="pt-2.5 mt-2.5 border-t border-sand-300/70 flex items-center justify-between">
+      <span class="text-xs text-roast-500 font-sans">قیمت</span>
+      <span class="font-sans font-bold text-sm text-roast-950">۲۸۰,۰۰۰ تومان</span>
+    </div>
       </article>
-    
-      <article 
-        class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group"
-      >
+      <article class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group">
         <div>
-          <!-- Badge -->
           <div class="flex items-center justify-between mb-2">
-            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">
-              فرآوری عسلی
-            </span>
-            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">
-              Costa
-            </span>
+            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">فلورال و گلی</span>
+            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">Ethiopia Yirgacheffe</span>
           </div>
-
-          <!-- Product Visual -->
           <div class="py-4 flex items-center justify-center">
-            
-    <div class="w-28 h-32 bg-[#D4A373] text-roast-950 border-[#B88656] rounded-t-lg rounded-b-xl shadow-md border flex flex-col items-center justify-between p-2 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
-      <div class="text-[7px] font-mono tracking-widest uppercase opacity-75">Costa</div>
+    <div class="w-28 h-32 bg-[#FAF7F0] text-roast-950 border-[#E2DBD0] rounded-t-lg rounded-b-xl shadow-md border flex flex-col items-center justify-between p-2 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
+      <div class="text-[7px] font-mono tracking-widest uppercase opacity-75">Ethiopia Yirgacheffe</div>
       <div class="text-center my-auto">
-        <div class="font-logo text-[9px] font-bold tracking-[0.2em]">DE FEU</div>
+        <div class="font-brand-cinzel text-[9px] font-bold tracking-[0.2em]">DE FEU</div>
         <div class="text-[6px] tracking-[0.25em] text-warmGold uppercase mt-0.5">Specialty 250g</div>
       </div>
       <div class="w-full bg-black/25 text-[7px] py-0.5 text-center rounded font-mono uppercase tracking-wider">
-        Medium-Light Roast
+        Light
       </div>
-    </div>
-  
-          </div>
-
-          <!-- Title & Subtitle -->
+    </div></div>
           <div class="mt-1">
-            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">
-              Costa Rica Tarrazú Honey Reserve
-            </h4>
-            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">
-              کاستاریکا تارازو فرآوری عسلی (۲۵۰ گرم)
-            </div>
-            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">
-              فرآوری یلو هانی با حفظ شیرینی طبیعی نیشکر، گردوی تازه و اسیدیته آبنباتی
-            </p>
+            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">Ethiopia Yirgacheffe G1</h4>
+            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">اتیوپی یرگاچف گرید ۱ (۲۵۰ گرم)</div>
+            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">عطر مدهوش‌کننده گل یاس، ترنج تازه و نت‌های میوه‌ای با روش فرآوری شسته</p>
           </div>
         </div>
-
-        <!-- Price -->
-        <div class="pt-3 mt-3 border-t border-sand-300/70 flex items-center justify-between">
-          <div class="text-xs text-roast-500 font-sans">قیمت</div>
-          <div class="text-right">
-            <span class="font-sans font-bold text-sm text-roast-950">
-              ۳۵۰,۰۰۰ تومان
-            </span>
-          </div>
-        </div>
+        
+    <div class="pt-2.5 mt-2.5 border-t border-sand-300/70 flex items-center justify-between">
+      <span class="text-xs text-roast-500 font-sans">قیمت</span>
+      <span class="font-sans font-bold text-sm text-roast-950">۳۴۰,۰۰۰ تومان</span>
+    </div>
       </article>
-    
-          
-      <div 
-        onclick="window.location.href='menu.html#coffee-bean'" 
-        class="flex-none w-[220px] sm:w-[240px] snap-start bg-roast-900 text-sand-50 rounded-3xl p-6 flex flex-col justify-between items-center text-center cursor-pointer group hover:bg-roast-850 hover:shadow-xl transition-all border border-roast-800"
-      >
-        <div class="w-12 h-12 rounded-full bg-roast-800 flex items-center justify-center text-warmGold mb-3 group-hover:scale-110 transition-transform">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-          </svg>
-        </div>
-
-        <div class="space-y-2">
-          <span class="text-[10px] uppercase font-mono tracking-widest text-warmGold block font-semibold">
-            +۵ آیتم دیگر
-          </span>
-          <h4 class="font-sans text-xl font-bold text-sand-50">
-            مشاهده کامل
-          </h4>
-          <p class="text-xs text-sand-400 font-normal font-sans leading-relaxed">
-            مشاهده تمام ۱۰ آیتم این بخش در منوی کامل
-          </p>
-        </div>
-
-
+      <article class="product-card flex-none w-[260px] sm:w-[280px] snap-start bg-[#EBE7DF] rounded-3xl p-4 sm:p-5 flex flex-col justify-between border border-[#E0D9CD] shadow-sm hover:shadow-md transition-all group">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[9.5px] font-bold text-roast-700 bg-sand-200/90 px-2.5 py-0.5 rounded-full border border-sand-300/60 font-sans">خاک آتشفشانی</span>
+            <span class="text-[10px] font-mono text-roast-500 uppercase tracking-wider">Guatemala Antigua</span>
+          </div>
+          <div class="py-4 flex items-center justify-center">
+    <div class="w-28 h-32 bg-[#DFD8C8] text-roast-900 border-[#C5BBA6] rounded-t-lg rounded-b-xl shadow-md border flex flex-col items-center justify-between p-2 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
+      <div class="text-[7px] font-mono tracking-widest uppercase opacity-75">Guatemala Antigua</div>
+      <div class="text-center my-auto">
+        <div class="font-brand-cinzel text-[9px] font-bold tracking-[0.2em]">DE FEU</div>
+        <div class="text-[6px] tracking-[0.25em] text-warmGold uppercase mt-0.5">Specialty 250g</div>
       </div>
-    
+      <div class="w-full bg-black/25 text-[7px] py-0.5 text-center rounded font-mono uppercase tracking-wider">
+        Medium
+      </div>
+    </div></div>
+          <div class="mt-1">
+            <h4 class="font-sans text-lg font-bold text-roast-950 group-hover:text-terracotta transition-colors leading-tight">Guatemala Antigua Pastoral</h4>
+            <div class="text-xs font-semibold text-roast-800 mt-0.5 font-sans">گواتمالا آنتیگوا آتشفشانی (۲۵۰ گرم)</div>
+            <p class="text-[11px] text-roast-600 font-normal mt-1.5 line-clamp-2 leading-relaxed font-sans">برداشت خاک‌های آتشفشانی با بادی مخملی، اسیدیته سیب سرخ و تافی کاراملی</p>
+          </div>
+        </div>
+        
+    <div class="pt-2.5 mt-2.5 border-t border-sand-300/70 flex items-center justify-between">
+      <span class="text-xs text-roast-500 font-sans">قیمت</span>
+      <span class="font-sans font-bold text-sm text-roast-950">۳۱۰,۰۰۰ تومان</span>
+    </div>
+      </article>
+          
+      <div onclick="window.location.href='menu.html#coffee-bean'" class="flex-none w-[220px] sm:w-[240px] snap-start bg-roast-900 text-sand-50 rounded-3xl p-6 flex flex-col justify-between items-center text-center cursor-pointer group hover:bg-roast-850 hover:shadow-xl transition-all border border-roast-800">
+        <div class="w-12 h-12 rounded-full bg-roast-800 flex items-center justify-center text-warmGold mb-3 group-hover:scale-110 transition-transform">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </div>
+        <div class="space-y-2">
+          <span class="text-[10px] uppercase font-mono tracking-widest text-warmGold block font-semibold">+۰ آیتم دیگر</span>
+          <h4 class="font-sans text-xl font-bold text-sand-50">مشاهده کامل</h4>
+          <p class="text-xs text-sand-400 font-normal font-sans leading-relaxed">مشاهده تمام ۵ آیتم این بخش در منوی کامل</p>
+        </div>
+        <span class="inline-flex items-center gap-2 mt-4 text-xs font-semibold text-sand-100 group-hover:text-warmGold transition-colors font-sans">ورود به منو</span>
+      </div>
         </div>
       </section>
-    
   </main>
 
-  <!-- FOOTER (Center aligned, matching menu page) -->
+  <!-- FOOTER -->
   <footer class="bg-roast-950 text-sand-300 py-10 px-4 sm:px-6 lg:px-8 border-t border-roast-850 mt-16 text-center text-xs space-y-3 font-sans">
     <div class="font-brand-cinzel text-xl text-sand-50 tracking-[0.2em] font-bold">DE FEU</div>
-    <p class="text-sand-400 font-normal">کافه و شیرینی‌پزی فرانسوی د فو • De Feu Café &amp; Pastry</p>
+    <p class="text-sand-400 font-normal">کافه و بیکری د فو • De Feu Café &amp; Bakery</p>
     <div class="flex items-center justify-center space-x-4 space-x-reverse text-xs text-sand-400 flex-wrap gap-y-2">
       <a href="menu.html" class="hover:text-sand-50 transition-colors font-bold">منوی کامل</a>
       <span>•</span>
@@ -1825,7 +1068,7 @@
       <span>•</span>
       <a href="#coffee-bean" class="hover:text-sand-50 transition-colors">دان قهوه</a>
     </div>
-    <div class="text-sand-500 text-[11px]">&copy; ۲۰۲۶ De Feu Café &amp; Pastry.</div>
+    <div class="text-sand-500 text-[11px]">&copy; ۲۰۲۶ De Feu Café &amp; Bakery.</div>
   </footer>
 
   <script>
@@ -1850,10 +1093,8 @@
       });
     }
 
-    // Rock-solid scroll tracker matching home and menu identically
     document.addEventListener('DOMContentLoaded', () => {
       const sections = ['coffee-based', 'warm', 'cold', 'pastry', 'coffee-bean'];
-      
       function onScroll() {
         const scrollPos = window.scrollY + 180;
         let current = sections[0];
@@ -1865,11 +1106,9 @@
         }
         setActiveFilterPill(current);
       }
-
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
 
-      // Deep-link hash handling
       const rawHash = window.location.hash ? window.location.hash.slice(1) : '';
       if (rawHash) {
         setTimeout(() => {
