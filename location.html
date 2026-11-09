@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>De Feu — موقعیت کافه و ارتباط با ما (Location &amp; Contact)</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css">
+  
+  <!-- Leaflet CSS for guaranteed high-reliability interactive map in Iran/global -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Vazirmatn"', 'sans-serif'],
+            serif: ['"Vazirmatn"', 'sans-serif'],
+            logo: ['"Cinzel"', 'serif'],
+          },
+          colors: {
+            sand: { 50: '#FAF8F5', 100: '#F5F2EB', 200: '#EBE6DC', 300: '#DFD8C8', 400: '#C5BBA6' },
+            roast: { 950: '#0E0D0C', 900: '#151413', 850: '#1C1A18', 800: '#2A2724', 700: '#45403B', 500: '#8A8278', 300: '#C2BAB0' },
+            terracotta: '#B36B4C', warmGold: '#C5A059'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    *, html, body, h1, h2, h3, h4, p, span, em, i, a, button { font-style: normal !important; }
+    body { font-family: 'Vazirmatn', sans-serif; }
+    .font-brand-cinzel { font-family: 'Cinzel', serif !important; }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #F5F2EB; }
+    ::-webkit-scrollbar-thumb { background: #D8D1C3; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #B9B09F; }
+    .glass-header { background: rgba(245, 242, 235, 0.94); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+    
+    /* Map Container Style */
+    #cafe-map {
+      height: 380px;
+      width: 100%;
+      border-radius: 1.5rem;
+      z-index: 10;
+    }
+    @media (min-width: 640px) {
+      #cafe-map {
+        height: 460px;
+      }
+    }
+    
+    /* Custom Pin Animation */
+    .leaflet-popup-content-wrapper {
+      background: #151413;
+      color: #FAF8F5;
+      border-radius: 1rem;
+      padding: 0.25rem;
+      font-family: 'Vazirmatn', sans-serif;
+    }
+    .leaflet-popup-tip {
+      background: #151413;
+    }
+  </style>
+</head>
+<body class="bg-sand-100 text-roast-900 font-sans antialiased selection:bg-roast-900 selection:text-sand-50 min-h-screen flex flex-col">
+
+  <!-- NAVIGATION HEADER -->
+  <header class="sticky top-0 z-40 glass-header border-b border-sand-200/80 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Right Side (in RTL): Action Cluster (Menu + Location Active + Home) -->
+      <div class="flex items-center gap-2.5">
+        <a href="artisan.html" class="inline-flex items-center justify-center bg-sand-200 hover:bg-sand-300 text-roast-900 px-3.5 py-2 rounded-full text-xs font-bold transition-all shadow-xs active:scale-95 font-sans">
+          <span>صفحه اصلی</span>
+        </a>
+        <a href="menu.html" class="inline-flex items-center justify-center bg-sand-200 hover:bg-roast-900 hover:text-sand-50 text-roast-900 px-3.5 py-2 rounded-full text-xs font-bold transition-all shadow-xs active:scale-95 font-sans">
+          <span>منوی کامل</span>
+        </a>
+        <a href="location.html" class="inline-flex items-center justify-center bg-roast-900 text-sand-50 p-2.5 rounded-full text-xs font-bold transition-all shadow-xs active:scale-95 border border-roast-800" title="موقعیت کافه">
+          <svg class="w-4 h-4 text-warmGold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Left Side (in RTL): Brand Logo -->
+      <div class="flex items-center text-left">
+        <a href="artisan.html" class="inline-block group text-left">
+          <span class="font-brand-cinzel text-xl sm:text-2xl font-bold tracking-[0.2em] text-roast-950 block leading-tight">DE FEU</span>
+          <span class="text-[8px] sm:text-[9px] tracking-[0.28em] text-roast-700 uppercase block font-semibold">CAFÉ &amp; BAKERY</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MAIN LOCATION & CONTACT SECTION -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 w-full flex-grow space-y-8">
+    
+    <!-- Title Area -->
+    <div class="text-right space-y-2">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-sand-200 text-roast-800 border border-sand-300">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span>پذیرای حضور گرم شما در کافه د فو هستیم</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold text-roast-950 tracking-tight">
+        موقعیت کافه و اطلاعات تماس
+      </h1>
+      <p class="text-xs sm:text-sm text-roast-600 font-normal leading-relaxed max-w-2xl">
+        برای دسترسی آسان، موقعیت زنده کافه روی نقشه تعاملی مشخص شده است. با کلیک بر روی گزینه‌های مسیریابی می‌توانید مستقیماً از طریق گوگل مپ، نشان یا بلد به سمت کافه حرکت کنید.
+      </p>
+    </div>
+
+    <!-- Interactive Map Card -->
+    <div class="bg-[#EBE7DF] rounded-[32px] p-4 sm:p-6 border border-[#E0D9CD] shadow-sm space-y-4">
+      
+      <!-- Interactive Leaflet Map Canvas -->
+      <div class="relative overflow-hidden rounded-2xl shadow-inner border border-sand-300">
+        <div id="cafe-map"></div>
+        
+        <!-- Live Center Floating Badge -->
+        <div class="absolute top-4 right-4 z-[400] bg-roast-950/90 backdrop-blur-md text-sand-50 px-3.5 py-2 rounded-xl text-xs font-bold border border-roast-800 flex items-center gap-2 shadow-lg">
+          <span class="w-2 h-2 rounded-full bg-warmGold animate-ping"></span>
+          <span>کافه و بیکری د فو (De Feu)</span>
+        </div>
+      </div>
+
+      <!-- Quick Navigation Buttons Row -->
+      <div class="pt-2 flex flex-wrap items-center gap-2.5">
+        <span class="text-xs font-bold text-roast-700 font-sans ml-1">مسیریابی مستقیم با:</span>
+        
+        <!-- Google Maps -->
+        <a href="https://maps.app.goo.gl/xY5xiwb2RFx5FWXu7?g_st=ac" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-roast-900 hover:bg-roast-800 text-sand-50 px-4 py-2 rounded-full text-xs font-bold transition-all shadow-xs active:scale-95">
+          <svg class="w-3.5 h-3.5 text-warmGold" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+          </svg>
+          <span>Google Maps</span>
+        </a>
+
+        <!-- Neshan -->
+        <a href="https://neshan.org/maps/@36.4323367,54.9695788,16z" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-sand-200 hover:bg-roast-900 hover:text-sand-50 text-roast-900 px-4 py-2 rounded-full text-xs font-bold border border-sand-300 transition-all shadow-xs active:scale-95">
+          <span>نشان (Neshan)</span>
+        </a>
+
+        <!-- Balad -->
+        <a href="https://balad.ir/location?latitude=36.4323367&longitude=54.9695788" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-sand-200 hover:bg-roast-900 hover:text-sand-50 text-roast-900 px-4 py-2 rounded-full text-xs font-bold border border-sand-300 transition-all shadow-xs active:scale-95">
+          <span>بلد (Balad)</span>
+        </a>
+
+        <!-- Waze -->
+        <a href="https://waze.com/ul?ll=36.4323367,54.9695788&navigate=yes" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-sand-200 hover:bg-roast-900 hover:text-sand-50 text-roast-900 px-4 py-2 rounded-full text-xs font-bold border border-sand-300 transition-all shadow-xs active:scale-95">
+          <span>Waze</span>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Contact & Details Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      
+      <!-- Card 1: Address -->
+      <div class="bg-[#EBE7DF] rounded-3xl p-6 border border-[#E0D9CD] shadow-sm flex flex-col justify-between space-y-3">
+        <div class="space-y-2">
+          <div class="w-10 h-10 rounded-2xl bg-sand-200 flex items-center justify-center text-roast-900 shadow-xs">
+            <svg class="w-5 h-5 text-warmGold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-sans font-bold text-lg text-roast-950">نشانی کافه</h3>
+          <p class="text-xs text-roast-700 leading-relaxed font-normal">
+            شاهرود، خیابان فردوسی، فردوسی ۲۵، منطقه چمران و رزمندگان
+          </p>
+          <div class="text-[11px] font-mono text-roast-500 pt-1">
+            مختصات: 36.432337, 54.969579
+          </div>
+        </div>
+
+        <button onclick="copyCoords()" id="copyBtn" class="w-full mt-2 py-2 rounded-xl bg-sand-100 hover:bg-roast-900 hover:text-sand-50 text-roast-800 text-xs font-bold border border-sand-300 transition-colors">
+          کپی مختصات جغرافیایی
+        </button>
+      </div>
+
+      <!-- Card 2: Hours -->
+      <div class="bg-[#EBE7DF] rounded-3xl p-6 border border-[#E0D9CD] shadow-sm flex flex-col justify-between space-y-3">
+        <div class="space-y-2">
+          <div class="w-10 h-10 rounded-2xl bg-sand-200 flex items-center justify-center text-roast-900 shadow-xs">
+            <svg class="w-5 h-5 text-warmGold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-sans font-bold text-lg text-roast-950">ساعات کاری کافه و بیکری</h3>
+          <div class="space-y-1.5 text-xs text-roast-700 font-normal">
+            <div class="flex justify-between">
+              <span>شنبه تا پنج‌شنبه:</span>
+              <span class="font-bold text-roast-950 font-sans">۰۸:۰۰ صبح تا ۲۳:۳۰ شب</span>
+            </div>
+            <div class="flex justify-between">
+              <span>جمعه‌ها و ایام تعطیل:</span>
+              <span class="font-bold text-roast-950 font-sans">۰۹:۰۰ صبح تا ۲۴:۰۰ بامداد</span>
+            </div>
+            <div class="flex justify-between pt-1 border-t border-sand-300/60 text-warmGold font-semibold">
+              <span>پخت روزانه کروسان و نان:</span>
+              <span>ساعت ۰۸:۳۰ و ۱۶:۳۰</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-[11px] text-roast-500 font-sans bg-sand-200/60 px-3 py-1.5 rounded-xl text-center">
+          فضای باز و سالن سرپوشیده با اینترنت پرسرعت
+        </div>
+      </div>
+
+      <!-- Card 3: Contact & Social -->
+      <div class="bg-[#EBE7DF] rounded-3xl p-6 border border-[#E0D9CD] shadow-sm flex flex-col justify-between space-y-3">
+        <div class="space-y-2">
+          <div class="w-10 h-10 rounded-2xl bg-sand-200 flex items-center justify-center text-roast-900 shadow-xs">
+            <svg class="w-5 h-5 text-warmGold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+          </div>
+          <h3 class="font-sans font-bold text-lg text-roast-950">ارتباط و رزرو</h3>
+          <p class="text-xs text-roast-700 leading-relaxed font-normal">
+            برای هماهنگی رویدادها، سفارشات شیرینی و کیک سفارشی، یا رزرو میزهای کاری:
+          </p>
+          <div class="space-y-1.5 pt-1 text-xs">
+            <div class="flex items-center justify-between">
+              <span class="text-roast-600 font-sans">تلفن کافه:</span>
+              <a href="tel:02332220000" class="font-bold text-roast-950 font-mono hover:text-warmGold transition-colors">۰۲۳-۳۲۲۲xxxx</a>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-roast-600 font-sans">اینستاگرام:</span>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="font-bold text-roast-950 font-sans hover:text-warmGold transition-colors">@defeu.cafe</a>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-roast-600 font-sans">تلگرام:</span>
+              <a href="https://t.me" target="_blank" rel="noopener noreferrer" class="font-bold text-roast-950 font-sans hover:text-warmGold transition-colors">@defeucafe</a>
+            </div>
+          </div>
+        </div>
+
+        <a href="menu.html" class="w-full mt-2 py-2 rounded-xl bg-roast-900 hover:bg-roast-800 text-sand-50 text-xs font-bold text-center transition-colors shadow-xs">
+          مشاهده منوی کامل نوشیدنی و بیکری
+        </a>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-roast-950 text-sand-300 py-10 px-4 sm:px-6 lg:px-8 border-t border-roast-850 mt-16 text-center text-xs space-y-3 font-sans">
+    <div class="font-brand-cinzel text-xl text-sand-50 tracking-[0.2em] font-bold">DE FEU</div>
+    <p class="text-sand-400 font-normal">کافه و بیکری د فو • De Feu Café &amp; Bakery</p>
+    <div class="flex items-center justify-center space-x-3 space-x-reverse text-xs text-sand-400 flex-wrap gap-y-2">
+      <a href="artisan.html" class="hover:text-sand-50 transition-colors font-bold">صفحه اصلی</a>
+      <span>•</span>
+      <a href="menu.html" class="hover:text-sand-50 transition-colors font-bold">منوی کامل</a>
+      <span>•</span>
+      <a href="location.html" class="hover:text-sand-50 transition-colors font-bold text-sand-50">موقعیت کافه</a>
+    </div>
+    <div class="text-sand-500 text-[11px]">&copy; ۲۰۲۶ De Feu Café &amp; Bakery.</div>
+  </footer>
+
+  <!-- Leaflet JS CDN -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script>
+    const lat = 36.4323367;
+    const lng = 54.9695788;
+
+    // Initialize Leaflet Map centered on De Feu Cafe
+    const map = L.map('cafe-map', {
+      center: [lat, lng],
+      zoom: 16,
+      zoomControl: true,
+      scrollWheelZoom: false
+    });
+
+    // Standard high-reliability OpenStreetMap raster tiles (instant load worldwide & Iran)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Custom Styled Gold & Dark Pin Icon
+    const customIcon = L.divIcon({
+      className: 'custom-cafe-marker',
+      html: `
+        <div style="
+          width: 40px;
+          height: 40px;
+          background: #151413;
+          border: 2px solid #C5A059;
+          border-radius: 50% 50% 50% 0;
+          transform: rotate(-45deg);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+          cursor: pointer;
+        ">
+          <span style="
+            transform: rotate(45deg);
+            font-size: 18px;
+          ">☕</span>
+        </div>
+      `,
+      iconSize: [40, 40],
+      iconAnchor: [20, 40],
+      popupAnchor: [0, -42]
+    });
+
+    const marker = L.marker([lat, lng], { icon: customIcon }).addTo(map);
+
+    marker.bindPopup(`
+      <div style="text-align: right; padding: 4px;">
+        <div style="font-weight: 800; font-size: 13px; color: #C5A059; margin-bottom: 2px;">کافه و بیکری د فو</div>
+        <div style="font-size: 11px; color: #FAF8F5; line-height: 1.5;">شاهرود، فردوسی ۲۵</div>
+        <div style="margin-top: 6px;">
+          <a href="https://maps.app.goo.gl/xY5xiwb2RFx5FWXu7?g_st=ac" target="_blank" style="color: #C5A059; font-size: 11px; font-weight: 700; text-decoration: underline;">مسیریابی در Google Maps &larr;</a>
+        </div>
+      </div>
+    `).openPopup();
+
+    function copyCoords() {
+      const coords = "36.432337, 54.969579";
+      navigator.clipboard.writeText(coords).then(() => {
+        const btn = document.getElementById('copyBtn');
+        btn.textContent = 'مختصات کپی شد! ✓';
+        btn.classList.add('bg-roast-900', 'text-sand-50');
+        setTimeout(() => {
+          btn.textContent = 'کپی مختصات جغرافیایی';
+          btn.classList.remove('bg-roast-900', 'text-sand-50');
+        }, 2500);
+      });
+    }
+  </script>
+</body>
+</html>
