@@ -2,7 +2,7 @@
 <html lang="fa" dir="rtl" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>De Feu — Café &amp; Bakery</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,7 +29,7 @@
   </script>
   <style>
     *, html, body, h1, h2, h3, h4, p, span, em, i, a, button { font-style: normal !important; }
-    body { font-family: 'Vazirmatn', sans-serif; }
+    body { font-family: 'Vazirmatn', sans-serif; touch-action: manipulation; -webkit-text-size-adjust: 100%; }
     .font-brand-cinzel { font-family: 'Cinzel', serif !important; }
     ::-webkit-scrollbar { width: 6px; height: 6px; }
     ::-webkit-scrollbar-track { background: #F5F2EB; }
@@ -2311,7 +2311,7 @@
     <div class="font-brand-cinzel text-xl text-sand-50 tracking-[0.2em] font-bold">DE FEU</div>
     <p class="text-sand-400 font-normal">کافه و بیکری د فو • De Feu Café &amp; Bakery</p>
     <div class="flex items-center justify-center space-x-3 space-x-reverse text-xs text-sand-400 flex-wrap gap-y-2">
-      <a href="artisan.html" class="hover:text-sand-50 transition-colors font-bold">صفحه اصلی</a>
+      <a href="index.html" class="hover:text-sand-50 transition-colors font-bold">صفحه اصلی</a>
       <span>•</span>
       <a href="menu.html" class="hover:text-sand-50 transition-colors font-bold text-sand-50">منوی کامل</a>
       <span>•</span>
@@ -2372,6 +2372,22 @@
       if (rawHash) {
         scrollToCategory(rawHash);
       }
+    });
+  </script>
+  <script>
+    // Prevent accidental sudden double-tap zoom
+    var lastTouchEnd = 0;
+    document.addEventListener('touchend', function (event) {
+      var now = Date.now();
+      if (now - lastTouchEnd <= 300) {
+        event.preventDefault();
+      }
+      lastTouchEnd = now;
+    }, { passive: false });
+
+    // Prevent Safari pinch-to-zoom gestures
+    document.addEventListener('gesturestart', function (e) {
+      e.preventDefault();
     });
   </script>
 </body>
