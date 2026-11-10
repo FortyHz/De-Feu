@@ -358,5 +358,21 @@
       e.preventDefault();
     });
   </script>
+  <script>
+    // Prevent accidental sudden double-tap zoom
+    var lastTouchEnd = 0;
+    document.addEventListener('touchend', function (event) {
+      var now = Date.now();
+      if (now - lastTouchEnd <= 300) {
+        event.preventDefault();
+      }
+      lastTouchEnd = now;
+    }, { passive: false });
+
+    // Prevent Safari pinch-to-zoom gestures
+    document.addEventListener('gesturestart', function (e) {
+      e.preventDefault();
+    });
+  </script>
 </body>
 </html>
